@@ -100,9 +100,9 @@ Portfolio
       <div class="flex flex-col w-64">
         <!-- Sidebar component, swap this element with another sidebar if you like -->
         <div class="flex-1 flex flex-col min-h-0 border-r border-gray-200 bg-gray-100">
-          <div class="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
+          <div class="flex-1 flex flex-col  pb-4 overflow-y-auto">
 
-            <nav class="mt-5 flex-1" aria-label="Sidebar">
+            <nav class=" flex-1 bg-gray-900" aria-label="Sidebar">
               <div class="px-2 space-y-1">
                 
                   <a href="#" class="bg-gray-200 text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md" x-state:on="Current" x-state:off="Default" x-state-description="Current: &quot;bg-gray-200 text-gray-900&quot;, Default: &quot;text-gray-600 hover:bg-gray-50 hover:text-gray-900&quot;">
@@ -123,7 +123,7 @@ Portfolio
               </div>
             </nav>
           </div>
-          <div class="flex-shrink-0 flex border-t border-gray-200 p-4">
+          <div class="flex-shrink-0 flex border-t border-gray-200 ">
             <a href="#" class="flex-shrink-0 w-full group block">
               <div class="flex items-center">
                 <div>
@@ -252,5 +252,7 @@ Portfolio
   </div>
 
   </div>
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.8.0/alpine.js"></script>
 </body>
 </html>
