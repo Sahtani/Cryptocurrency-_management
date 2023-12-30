@@ -53,7 +53,7 @@
                             <h1 class="text-3xl font-extrabold leading-tight text-gray-100 sm:text-5xl md:text-7xl">CryptoCurrency Portfolio With Ease.</h1>
                         </div>
                         <p class="text-2xl text-pink-600"> Track your holdings, monitor performance, and make strategic decisions based on real-time market data.</p>
-                        <a href="#_" class="inline-block px-8 py-5 text-2xl font-medium tracking-wide text-center text-pink-600 transition duration-200 bg-white hover:bg-pink-100 ease rounded">Learn More</a>
+                        <a href="#_" class="inline-block px-8 py-5 text-2xl font-medium tracking-wide text-center text-pink-600 transition duration-200 bg-white hover:bg-[#111827] ease rounded">Learn More</a>
                     </div>
                 </div>
             </div>
@@ -113,7 +113,7 @@
               <div aria-hidden="true" class="absolute inset-x-0 top-0 h-1/2 bg-white lg:hidden"></div>
               <div class="mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:p-0 lg:h-full">
                 <div class="aspect-w-10 aspect-h-6 rounded-xl shadow-xl overflow-hidden sm:aspect-w-16 sm:aspect-h-7 lg:aspect-none lg:h-full">
-                  <img class="object-cover lg:h-full lg:w-full" src="https://images.unsplash.com/photo-1520333789090-1afc82db536a?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=2102&amp;q=80" alt="">
+                  <img class="object-cover lg:h-full lg:w-full" src="../../public/assets/img/imghome.png" alt="">
                 </div>
               </div>
             </div>
