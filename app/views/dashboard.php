@@ -63,10 +63,7 @@
                   
                     <a href="#" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-base font-medium rounded-md" x-state-description="undefined: &quot;bg-gray-100 text-gray-900&quot;, undefined: &quot;text-gray-600 hover:bg-gray-50 hover:text-gray-900&quot;">
                     <svg class="text-gray-400 group-hover:text-gray-500 mr-4 h-6 w-6" xmlns="http://www.w3.org/2000/svg" height="16" width="18" viewBox="0 0 576 512"><path fill="#6b6b6b" d="M304 240V16.6c0-9 7-16.6 16-16.6C443.7 0 544 100.3 544 224c0 9-7.6 16-16.6 16H304zM32 272C32 150.7 122.1 50.3 239 34.3c9.2-1.3 17 6.1 17 15.4V288L412.5 444.5c6.7 6.7 6.2 17.7-1.5 23.1C371.8 495.6 323.8 512 272 512C139.5 512 32 404.6 32 272zm526.4 16c9.3 0 16.6 7.8 15.4 17c-7.7 55.9-34.6 105.6-73.9 142.3c-6 5.6-15.4 5.2-21.2-.7L320 288H558.4z"/></svg>
-Portfolio
-
-                  
-                  
+                    Portfolio
                 </div>
               </nav>
             </div>
@@ -184,6 +181,12 @@ Portfolio
             </p>
           </a>
         </div>
+        <div>
+        <a href="#_" class="inline-block px-2 py-1 text-1xl font-medium tracking-wide text-center text-pink-600 transition duration-200 bg-gray-900 hover:bg-[#111827] ease rounded">Buy</a>
+        </div>
+        <div>
+
+        </div>
       </div>
     
       <div class="relative rounded-lg border border-gray-300 bg-white px-6 py-5 shadow-sm flex items-center space-x-3 hover:border-gray-400 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
@@ -245,6 +248,44 @@ Portfolio
 
     </div>
   </div>
+  <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-lg">
+            <table class="min-w-full divide-y divide-gray-300">
+              <thead class="bg-gray-50">
+                <tr>
+                  <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">Name</th>
+                  <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Slug</th>
+                  <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Max Supply</th>
+                  <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Current Price</th>
+                  <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Ranking</th>
+                  <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Market Cap</th>
+                  <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Volume 24h</th>
+                  <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Circulating Supply</th>
+                  <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Total Supply</th>
+                  <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Action</th>
+
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200 bg-white">
+                
+                  <tr>
+                    <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">Lorem, ipsum.</td>
+                    <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">Lorem, ipsum dolor.</td>
+                    <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">Lorem.</td>
+                    <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">lorem</td>
+                    <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">lorem</td>
+                    <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">lorem</td>
+                    <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">lorem</td>
+                    <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">lorem</td>
+                    <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">lorem</td>
+                    <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
+                      <a href="#" class="inline-block px-2 py-1 text-1xl font-medium tracking-wide text-center text-pink-600 transition duration-200 bg-gray-900 hover:bg-[#111827] ease rounded">Buy<span class="sr-only">, Floyd Miles</span></a>
+                    </td>
+
+                  </tr>
+                
+                  
+              </tbody>
+            </table>
         </main>
 
       </div>
@@ -252,6 +293,16 @@ Portfolio
   </div>
 
   </div>
+
+ 
+
+   
+
+
+
+
+
+
 
    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.8.0/alpine.js"></script>
 </body>
