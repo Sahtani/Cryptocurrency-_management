@@ -1,7 +1,16 @@
-<?php require APPROOT . '/views/inc/header.php'; ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body class="bg-[#111827]">
 <section class="w-full pl-4 h-[57px] bg-gray-900">
     <div class="flex flex-col flex-wrap items-center justify-between h-14 mx-auto md:flex-row max-w-7xl">
-    <a href="home.php"><img src="<?php echo URLROOT; ?>/public/img/logo.png" class="w-[130px] h-[48px]"></img></a>
+    <a href="home.php"><img src="../../public/assets/img/logo.png" class="w-[130px] h-[48px]"></img></a>
             <div class="inline-flex items-center justify-center h-full md:justify-end">
                 <a href="#" class="inline-flex items-center justify-center h-full px-4 text-base font-medium leading-6 text-white whitespace-no-wrap transition duration-150 ease-in-out bg-pink-600 border border-transparent hover:bg-pink-500 focus:outline-none focus:border-pink-700 focus:shadow-outline-indigo active:bg-pink-700">
                 Logout
@@ -11,7 +20,6 @@
         <div class="absolute top-0 right-0 flex items-center justify-center h-full pr-4 cursor-pointer md:hidden">
             <svg class="w-6 h-6 text-gray-100" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16"></path></svg>
         </div>
-        <?php echo $data['title'] ?>
     </div>
 </section>
 
@@ -198,4 +206,9 @@
     </div>
     </div>
 
-<?php require APPROOT . '/views/inc/footer.php'; ?>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.8.0/alpine.js"></script>
+
+</body>
+</html>
