@@ -8,7 +8,7 @@
                 </a>
             </div>
         </div>
-        <div class="absolute top-0 right-0 flex items-center justify-center h-full pr-4 cursor-pointer md:hidden">
+        <div class="absolute top-0 right-0 flex items-center justify-center h-full cursor-pointer md:hidden">
             <svg class="w-6 h-6 text-gray-100" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16"></path></svg>
         </div>
         <?php echo $data['title'] ?>

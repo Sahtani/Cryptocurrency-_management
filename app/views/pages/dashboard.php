@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexus</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-
-</head>
+<?php require APPROOT . '/views/inc/header.php'; ?>
 <body class="bg-[#111827]">
 <section class="w-full pl-4 h-[57px] bg-gray-900">
     <div class="flex flex-col flex-wrap items-center justify-between h-14 mx-auto md:flex-row max-w-7xl">
@@ -208,7 +200,7 @@
 
 
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.8.0/alpine.js"></script>
+    <?php require APPROOT . '/views/inc/footer.php'; ?>
 
 </body>
 </html>
