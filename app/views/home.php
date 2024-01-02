@@ -16,7 +16,7 @@
     <div class="flex flex-col flex-wrap items-center justify-between h-12 mx-auto md:flex-row max-w-7xl">
 
         <a href="#_" class="flex items-center order-first h-12 font-medium text-gray-900 lg:order-none lg:w-auto title-font lg:items-center lg:justify-center md:mb-0">
-            <span class="text-xl font-black leading-none text-white select-none logo">logo</span>
+        <a href="home.php"><img src="../../public/assets/img/logo.png" class="w-[130px] h-[48px]"></img></a>
         </a>
 
         <div class="relative flex-col hidden h-full md:flex md:flex-row">
