@@ -20,4 +20,12 @@
 
       $this->view('pages/about', $data);
     }
+
+    publiC function dashboard(){
+      $this->view('pages/dashboard');
+    }
+
+    public function Watchlist(){
+      $this->view('pages/watchlist');
+    }
   }

@@ -1,4 +1,5 @@
 <?php require APPROOT . '/views/inc/header.php'; ?>
+<body class="bg-[#111827]">
 <div class="relative overflow-hidden">
       <header class="relative" x-data="Components.popover({ open: false, focus: true })" x-init="init()" @keydown.escape="onEscape" @close-popover-group.window="onClosePopoverGroup">
         <div class="bg-[#250513] ">
@@ -6,7 +7,7 @@
     <div class="flex flex-col flex-wrap items-center justify-between h-12 mx-auto md:flex-row max-w-7xl">
 
         <a href="#_" class="flex items-center order-first h-12 font-medium text-gray-900 lg:order-none lg:w-auto title-font lg:items-center lg:justify-center md:mb-0">
-        <a href="home.php"><img src="../../public/assets/img/logo.png" class="w-[130px] h-[48px]"></img></a>
+        <a href="home.php"><img src="/Cryptocurrency_management/public/img/logo.png" class="w-[130px] h-[48px]"></img></a>
         </a>
 
         <div class="relative flex-col hidden h-full md:flex md:flex-row">
@@ -34,7 +35,7 @@
 
       </header>
 
-      <main class="h-[90vh] bg-cover bg-center" style="background-image: url('../../../public/img/home.png');">
+      <main class="h-[90vh] bg-cover bg-center" style="background-image: url('../../public/img/home.png');">
       <div class="flex flex-col items-center px-10 pt-20 pb-40 lg:flex-row">
             <div class="relative w-full max-w-2xl bg-cover lg:w-7/12">
                 <div class="relative flex flex-col items-center justify-center w-full h-full lg:pr-10">
@@ -103,7 +104,7 @@
               <div aria-hidden="true" class="absolute inset-x-0 top-0 h-1/2 bg-white lg:hidden"></div>
               <div class="mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:p-0 lg:h-full">
                 <div class="aspect-w-10 aspect-h-6 rounded-xl shadow-xl overflow-hidden sm:aspect-w-16 sm:aspect-h-7 lg:aspect-none lg:h-full">
-                  <img class="object-cover lg:h-full lg:w-full" src="../../public/assets/img/imghome.png" alt="">
+                  <img class="object-cover lg:h-full lg:w-full" src="/Cryptocurrency_management/public/img/imghome.png" alt="">
                 </div>
               </div>
             </div>
@@ -171,13 +172,13 @@
         <div class="max-w-screen-xl px-4 mx-auto sm:px-6 lg:px-8">
             <div class="grid grid-cols-2 gap-8 md:grid-cols-6 lg:grid-cols-5">
                 <div class="flex items-center justify-center col-span-1 md:col-span-2 lg:col-span-1">
-                    <img src="../../public/assets/img/logosimplon.png" alt="">
+                    <img src="../../public/img/logosimplon.png" alt="">
                 </div>
                 <div class="flex items-center justify-center col-span-1 md:col-span-2 lg:col-span-1">
-                    <img src="../../public/assets/img/um6p.png" alt="">
+                    <img src="../../public/img/um6p.png" alt="">
                 </div>
                 <div class="flex items-center justify-center col-span-1 md:col-span-2 lg:col-span-1">
-                    <img src="../../public/assets/img/youcode.png" alt="">
+                    <img src="../../public/img/youcode.png" alt="">
                 </div>
                 <div class="flex items-center justify-center col-span-1 md:col-span-3 lg:col-span-1">
                     <svg class="h-10 text-black fill-current" viewBox="0 0 704 335" xmlns="http://www.w3.org/2000/svg"><g fill-rule="nonzero"><path d="M407.451 27v54.605H476v19.574h-68.549v161.219c0 16.487 2.658 29.1 7.994 37.858 5.326 8.758 14.51 13.132 27.58 13.132 6.185 0 11.511-.34 15.978-1.028 4.466-.68 8.244-1.548 11.341-2.577l2.578 18.545c-8.244 3.775-19.245 5.672-32.985 5.672-11.342 0-20.705-1.897-28.09-5.672-7.394-3.775-13.23-9.008-17.526-15.709-4.297-6.7-7.305-14.76-9.023-24.207-1.729-9.437-2.578-19.653-2.578-30.648V101.18H342V81.605h40.72V36.267L407.45 27zm108.272 55.01l56.592 153.35c4.797 12.012 9.086 23.335 12.856 33.96 3.77 10.635 7.37 21.1 10.802 31.386H597a1724.777 1724.777 0 0111.061-31.136c3.94-10.805 8.318-22.208 13.116-34.22L678.277 82H704l-98.263 247h-21.095L490 82.01h25.723zM150.117 29.041C172.077.14 202.607 0 202.607 0s4.544 27.176-17.277 53.345c-23.289 27.954-49.763 23.376-49.763 23.376s-4.974-21.98 14.55-47.68zm-11.275 67.5C150.16 96.54 171.165 81 198.515 81c47.075 0 65.588 33.449 65.588 33.449s-36.216 18.488-36.216 63.36c0 50.618 45.113 68.057 45.113 68.057s-31.533 88.644-74.134 88.644c-19.565 0-34.776-13.171-55.39-13.171-21.006 0-41.862 13.661-55.431 13.661C49.146 335.01 0 250.913 0 183.326 0 116.817 41.6 81.929 80.61 81.929c25.368 0 45.052 14.611 58.232 14.611z"></path></g></svg>
