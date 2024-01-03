@@ -1,5 +1,15 @@
-<?php require APPROOT . '/views/inc/header.php'; ?>
-<div class="relative overflow-hidden">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#111827]">
+
+
+    <div class="relative overflow-hidden">
       <header class="relative" x-data="Components.popover({ open: false, focus: true })" x-init="init()" @keydown.escape="onEscape" @close-popover-group.window="onClosePopoverGroup">
         <div class="bg-[#250513] ">
         <section class="w-full pl-4 bg-gray-900">
@@ -34,7 +44,7 @@
 
       </header>
 
-      <main class="h-[90vh] bg-cover bg-center" style="background-image: url('../../../public/img/home.png');">
+      <main class="h-[90vh] bg-cover bg-center" style="background-image: url('../../public/assets/img/home.png');">
       <div class="flex flex-col items-center px-10 pt-20 pb-40 lg:flex-row">
             <div class="relative w-full max-w-2xl bg-cover lg:w-7/12">
                 <div class="relative flex flex-col items-center justify-center w-full h-full lg:pr-10">
@@ -224,4 +234,6 @@
     </div>
 </section>
   </footer>
-<?php require APPROOT . '/views/inc/footer.php'; ?>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.8.0/alpine.js"></script>
+</body>
+</html>
