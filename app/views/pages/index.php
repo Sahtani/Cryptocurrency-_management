@@ -35,7 +35,7 @@
 
       </header>
 
-      <main class="h-[90vh] bg-cover bg-center" style="background-image: url('../../public/img/home.png');">
+      <main class="h-[90vh] bg-cover bg-center" style="background-image: url('<?php echo URLROOT ?>../img/home.png');">
       <div class="flex flex-col items-center px-10 pt-20 pb-40 lg:flex-row">
             <div class="relative w-full max-w-2xl bg-cover lg:w-7/12">
                 <div class="relative flex flex-col items-center justify-center w-full h-full lg:pr-10">

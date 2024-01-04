@@ -1,5 +1,10 @@
 <?php require APPROOT . '/views/inc/header.php';
 $data = $data['row'];
+
+// $test = $data['coins'];
+
+// var_dump($test);
+// die();
 ?>
 
 <body class="bg-[#111827]">
@@ -210,14 +215,14 @@ $data = $data['row'];
                                   <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
                                     <a href="#" class="inline-block px-2 py-1 text-sm font-medium tracking-wide text-center text-white transition duration-200  bg-pink-600 hover:bg-gray-900 ease rounded">Buy</a>
                                   </td>
-                                <?php  } ?>
+                                <?php } ?>
                               </tr>
                             </tbody>
                           </table>
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </div>    
 
 
 
