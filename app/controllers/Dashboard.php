@@ -1,5 +1,5 @@
 <?php
-class Pages extends Controller
+class Dashboard extends Controller
 {
   public function __construct()
   {
@@ -15,31 +15,25 @@ class Pages extends Controller
     $this->view('pages/index', $data);
   }
 
-  public function about()
-  {
-    $data = [
-      'title' => 'About Us'
-    ];
+  public function watchlist() {
+    
 
-    $this->view('pages/about', $data);
-  }
+    $this->view('pages/watchlist');
+}
+
 
   public function dashboard()
   {
-    $this->model('User');
-    $data = new User();
+    $data = $this->model('User');
     $row = $data->displayCoin();
-    $coins = $data->displaywatchlist();
+    // $coins = $data->displaywatchlist();
     $data = array(
       'row' => $row,
-      'coins'=> $coins,
+      // 'coins'=> $coins,
     );
     $this->view('pages/dashboard', $data);
   }
 
+
   
-  public function Watchlist()
-  {
-    $this->view('pages/watchlist');
-  }
 }
