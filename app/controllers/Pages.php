@@ -21,6 +21,6 @@ class Pages extends Controller
       'title' => 'About Us'
     ];
 
-    $this->view('pages/about', $data);
+      $this->view('pages/about', $data);
+    }
   }
-}
