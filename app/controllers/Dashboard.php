@@ -47,4 +47,14 @@ class Dashboard extends Controller
     );
     $this->view('pages/dashboard', $data);
   }
+<<<<<<< HEAD:app/controllers/Dashboard.php
+=======
+
+  
+  public function Watchlist()
+  {
+    $this->view('pages/watchlist');
+  }
+  
+>>>>>>> fb68f6b3398bd7b71351e8e5f6dd9129fc958c02:app/controllers/Pages.php
 }
