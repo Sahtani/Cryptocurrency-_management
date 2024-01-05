@@ -17,11 +17,11 @@ class User
         return $row;
     }
 
-    // public function displaywatchlist(){
-    //     $this->db->query("SELECT * FROM cryptomonnaies");
-    //     $row = $this->db->resultSet();
-    //     return $row;
-    // }
+    public function displaywatchlist(){
+        $this->db->query("SELECT * FROM cryptomonnaies");
+        $row = $this->db->resultSet();
+        return $row;
+    }
 
 
 }

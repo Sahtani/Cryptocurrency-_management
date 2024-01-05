@@ -29,15 +29,15 @@ class Pages extends Controller
     $this->model('User');
     $data = new User();
     $row = $data->displayCoin();
-    // $coins = $data->displaywatchlist();
+    $coins = $data->displaywatchlist();
     $data = array(
       'row' => $row,
-      // 'coins'=> $coins,
+      'coins'=> $coins,
     );
     $this->view('pages/dashboard', $data);
   }
 
-  
+
   public function Watchlist()
   {
     $this->view('pages/watchlist');
