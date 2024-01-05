@@ -3,11 +3,13 @@ class Dashboard extends Controller
 {
 
   private $Watchlist;
+  private $model;
 
 
   public function __construct()
   {
     $this->Watchlist = $this->model('Watchlists');
+    $this->model = $this->model('Wallets');
   }
 
   public function index()
@@ -27,10 +29,6 @@ class Dashboard extends Controller
     $this->view('pages/watchlist');
   }
 
-  public function wallet(){
-
-    $this->view('pages/wallet');
-  }
 
 
   public function dashboard()
@@ -44,4 +42,6 @@ class Dashboard extends Controller
     );
     $this->view('pages/dashboard', $data);
   }
+
+
 }

@@ -4,22 +4,25 @@ class Wallet extends Controller
 {
     private $model;
 
-
-
     public function __construct()
     {
-        $this->model = $this->model('Wallet');
+        $this->model = $this->model('Wallets');
 
     }
 
 
-    public function displayCrypto()
+    public function index()
     {
-        $userId = 99999;
-        $data = $this->model->displayWallet($userId);
+        $data = $this->model->getWallet();
 
         $this->view('pages/wallet', $data);
     }
 
+    public function wallet()
+    {
+        $userId = 99999;
+        $data = $this->model->getWallet($userId);
 
+        $this->view('pages/wallet', $data);
+    }
 }

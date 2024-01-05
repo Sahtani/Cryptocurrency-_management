@@ -1,5 +1,4 @@
 <?php require APPROOT . '/views/inc/header.php';
-
 ?>
 
 <body class="bg-[#111827] text-black font-sans">
@@ -185,14 +184,15 @@
                 <main>
                     <div class="text-center my-4 ">
                         <h1 class="text-2xl">
-                            <?php echo $data->wallet ?>
+                            <?php echo $data->Quantité ?>$
                         </h1>
                     </div>
 
                     <div class="flex justify-around my-4">
-                        <button class="bg-[#db2777] text-white rounded py-2 px-4">Nexus ID</button>
+                        <button class="bg-[#db2777] text-white rounded py-2 px-4">Nexus ID : <?php echo $data->User_ID ?></button>
                         <button class="bg-[#db2777] text-white rounded py-2 px-4">Sell</button>
                         <button class="bg-[#db2777] text-white rounded py-2 px-4">Send</button>
+                        <button class="bg-[#db2777] text-white rounded py-2 px-4">Stat</button>
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 px-4">
