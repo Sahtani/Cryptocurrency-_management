@@ -50,8 +50,12 @@
         $url = rtrim($_GET['url'], '/');
         $url = filter_var($url, FILTER_SANITIZE_URL);
         $url = explode('/', $url);
-        return $url;
+        
+        // Check if the array is empty before returning
+        return !empty($url) ? $url : [''];
       }
+      // Return an empty array if "url" is not set
+      return [''];
     }
   } 
   
