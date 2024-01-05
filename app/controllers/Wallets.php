@@ -2,20 +2,22 @@
 
 class Wallets extends Controller
 {
-    private $model;
+    private $walletModel;
+
     public function __construct()
     {
-        $this->model = $this->model('Wallet');
+        $this->walletModel = new Wallet();
     }
 
-
-
-    public function index()
+    public function displayBalance($user_id)
     {
-        $this->view('pages/wolet.php');
+        // Get the balance from the model
+        $user_id = 99999;
+        $balance = $this->walletModel->getBalance($user_id);
+
+        // Pass the balance to the view (you need to create a view file)
+        $this->view('pages/wallet');
     }
 
-    public function withdraw()
-    {
-    }
+
 }

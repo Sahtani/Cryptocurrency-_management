@@ -1,19 +1,6 @@
 <?php
 class Pages extends Controller
 {
-  public function __construct()
-  {
-  }
-
-  public function index()
-  {
-    $data = [
-      'title' => 'TraversyMVC',
-    ];
-
-
-    $this->view('pages/index', $data);
-  }
 
   public function about()
   {
@@ -36,5 +23,10 @@ class Pages extends Controller
   public function Watchlist()
   {
     $this->view('pages/watchlist');
+  }
+
+  public function index()
+  {
+    $this->view('pages/wallet');
   }
 }
