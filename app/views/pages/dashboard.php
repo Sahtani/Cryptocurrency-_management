@@ -1,10 +1,5 @@
 <?php require APPROOT . '/views/inc/header.php';
 $data = $data['row'];
-
-// $test = $data['coins'];
-
-// var_dump($test);
-// die();
 ?>
 
 <body class="bg-[#111827]">
@@ -50,14 +45,14 @@ $data = $data['row'];
             <nav aria-label="Sidebar" class="mt-5">
               <div class="px-2 space-y-1">
 
-                <a href="<?php echo URLROOT ?>pages/watchlist" class="bg-gray-100 text-gray-900 group flex items-center px-2 py-2 text-base font-medium rounded-md" x-state:on="Current" x-state:off="Default" x-state-description="Current: &quot;bg-gray-100 text-gray-900&quot;, Default: &quot;text-gray-600 hover:bg-gray-50 hover:text-gray-900&quot;">
+                <a href="<?php echo URLROOT; ?>pages/watchlist" class="bg-gray-100 text-gray-900 group flex items-center px-2 py-2 text-base font-medium rounded-md" x-state:on="Current" x-state:off="Default" x-state-description="Current: &quot;bg-gray-100 text-gray-900&quot;, Default: &quot;text-gray-600 hover:bg-gray-50 hover:text-gray-900&quot;">
                   <svg class="text-gray-400 group-hover:text-gray-500 mr-4 h-6 w-6" xmlns="http://www.w3.org/2000/svg" height="16" width="18" viewBox="0 0 576 512">
                     <path fill="#727274" d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z" />
                   </svg>
                   Dashboard
                 </a>
 
-                <a href="#" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-base font-medium rounded-md" x-state-description="undefined: &quot;bg-gray-100 text-gray-900&quot;, undefined: &quot;text-gray-600 hover:bg-gray-50 hover:text-gray-900&quot;">
+                <a href="<?php echo URLROOT ?>/pages/watchlist" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-base font-medium rounded-md" x-state-description="undefined: &quot;bg-gray-100 text-gray-900&quot;, undefined: &quot;text-gray-600 hover:bg-gray-50 hover:text-gray-900&quot;">
                   <svg class="text-gray-400 group-hover:text-gray-500 mr-4 h-6 w-6" xmlns="http://www.w3.org/2000/svg" height="16" width="18" viewBox="0 0 576 512">
                     <path fill="#7e7f81" d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z" />
                   </svg>
@@ -196,38 +191,93 @@ $data = $data['row'];
                             </thead>
 
                             <tbody class="divide-y divide-gray-200 bg-white">
-                              <?php foreach ($data as $coin) { ?>
-                              <tr>
-                                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 flex items-center "><svg class="inline-block cursor-pointer mr-4" xmlns="http://www.w3.org/2000/svg" height="16" width="18" viewBox="0 0 576 512">
-                                    <path fill="#87898c" d="M287.9 0c9.2 0 17.6 5.2 21.6 13.5l68.6 141.3 153.2 22.6c9 1.3 16.5 7.6 19.3 16.3s.5 18.1-5.9 24.5L433.6 328.4l26.2 155.6c1.5 9-2.2 18.1-9.7 23.5s-17.3 6-25.3 1.7l-137-73.2L151 509.1c-8.1 4.3-17.9 3.7-25.3-1.7s-11.2-14.5-9.7-23.5l26.2-155.6L31.1 218.2c-6.5-6.4-8.7-15.9-5.9-24.5s10.3-14.9 19.3-16.3l153.2-22.6L266.3 13.5C270.4 5.2 278.7 0 287.9 0zm0 79L235.4 187.2c-3.5 7.1-10.2 12.1-18.1 13.3L99 217.9 184.9 303c5.5 5.5 8.1 13.3 6.8 21L171.4 443.7l105.2-56.2c7.1-3.8 15.6-3.8 22.6 0l105.2 56.2L384.2 324.1c-1.3-7.7 1.2-15.5 6.8-21l85.9-85.1L358.6 200.5c-7.8-1.2-14.6-6.1-18.1-13.3L287.9 79z" />
-                                  </svg>
-                                  <img class="h-10 w-10 rounded-full " src="" alt="img">
-                                </td>
+                              <?php
+
+                              foreach ($data as $coin) { ?>
+                                <tr>
+                                  <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 flex items-center ">
+                                    <a href='<?= URLROOT; ?>/watchlist/addfavorite/<?= $coin->id; ?>'>
+                                      <svg class="inline-block cursor-pointer mr-4" xmlns="http://www.w3.org/2000/svg" height="16" width="18" viewBox="0 0 576 512">
+                                        <path fill="#87898c" d="M287.9 0c9.2 0 17.6 5.2 21.6 13.5l68.6 141.3 153.2 22.6c9 1.3 16.5 7.6 19.3 16.3s.5 18.1-5.9 24.5L433.6 328.4l26.2 155.6c1.5 9-2.2 18.1-9.7 23.5s-17.3 6-25.3 1.7l-137-73.2L151 509.1c-8.1 4.3-17.9 3.7-25.3-1.7s-11.2-14.5-9.7-23.5l26.2-155.6L31.1 218.2c-6.5-6.4-8.7-15.9-5.9-24.5s10.3-14.9 19.3-16.3l153.2-22.6L266.3 13.5C270.4 5.2 278.7 0 287.9 0zm0 79L235.4 187.2c-3.5 7.1-10.2 12.1-18.1 13.3L99 217.9 184.9 303c5.5 5.5 8.1 13.3 6.8 21L171.4 443.7l105.2-56.2c7.1-3.8 15.6-3.8 22.6 0l105.2 56.2L384.2 324.1c-1.3-7.7 1.2-15.5 6.8-21l85.9-85.1L358.6 200.5c-7.8-1.2-14.6-6.1-18.1-13.3L287.9 79z" />
+                                      </svg>
+                                    </a>
+                                    <img class="h-10 w-10 rounded-full " src="" alt="img">
+                                  </td>
                                   <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6"><?= $coin->name ?></td>
                                   <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><?= $coin->slug ?></td>
                                   <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><?= $coin->max_supply ?></td>
                                   <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><?= $coin->current_price ?></td>
-                                  <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><?= $coin->ranking?></td>
+                                  <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><?= $coin->ranking ?></td>
                                   <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><?= $coin->market_cap ?></td>
                                   <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><?= $coin->volume_24h  ?></td>
                                   <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><?= $coin->circulating_supply ?></td>
                                   <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><?= $coin->total_supply ?></td>
                                   <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                                    <a href="#" class="inline-block px-2 py-1 text-sm font-medium tracking-wide text-center text-white transition duration-200  bg-pink-600 hover:bg-gray-900 ease rounded">Buy</a>
+                                    <!-- <button data-modal-target="crud-modal" data-modal-toggle="crud-modal" class="block text-white bg-pink-600 hover:bg-gray-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center " type="button">Buy</button> -->
+                                    <button data-modal-target="crud-modal" data-modal-toggle="crud-modal" class="block text-white bg-pink-600 hover:bg-pink-700  font-medium rounded-lg text-sm px-5 py-2.5 text-center " type="button" name="submit">
+                                      Buy
+                                    </button>
+
                                   </td>
                                 <?php } ?>
-                              </tr>
+                                </tr>
                             </tbody>
                           </table>
                         </div>
                       </div>
                     </div>
-                  </div>    
+                  </div>
+                  <!-- Main modal -->
+                  <div id="crud-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                    <div class="relative p-4 w-full max-w-md max-h-full">
+                      <!-- Modal content -->
+                      <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                        <!-- Modal header -->
+                        <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                          <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                            Buy New Coin
+                          </h3>
+                          <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="crud-modal">
+                            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                            </svg>
+                            <span class="sr-only">Close modal</span>
+                          </button>
+                        </div>
+                        <!-- Modal body -->
+                        <form class="p-4 md:p-5">
+                          <div class="grid gap-4 mb-4 grid-cols-2">
+                            <div class="col-span-2">
+                              <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
+                              <input type="text" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="coin name" required="">
+                            </div>
+                            <div class="col-span-2 sm:col-span-1">
+                              <label for="price" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Price</label>
+                              <input type="number" name="price" id="price" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="$2999" required="">
+                            </div>
+                            <div class="col-span-2 sm:col-span-1">
+                              <label for="category" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Quantite</label>
+                              <input type="number" name="price" id="price" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="$2999" required="">
+
+                            </div>
+
+                          </div>
+                          <div class="flex items-center justify-center ">
+
+
+                            <button type="submit" class="text-white inline-flex items-center bg-pink-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                              <svg class="me-1 -ms-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path>
+                              </svg>
+                              Add new Coin
+                            </button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+
 
 
 
                   <?php require APPROOT . '/views/inc/footer.php'; ?>
-
-</body>
-
-</html>

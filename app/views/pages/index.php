@@ -7,14 +7,14 @@
     <div class="flex flex-col flex-wrap items-center justify-between h-12 mx-auto md:flex-row max-w-7xl">
 
         <a href="#_" class="flex items-center order-first h-12 font-medium text-gray-900 lg:order-none lg:w-auto title-font lg:items-center lg:justify-center md:mb-0">
-        <a href="home.php"><img src="/Cryptocurrency_management/public/img/logo.png" class="w-[130px] h-[48px]"></img></a>
+        <a href="home.php"><img src="<?php echo URLROOT ?>../img/logo.png" class="w-[130px] h-[48px]"></img></a>
         </a>
 
         <div class="relative flex-col hidden h-full md:flex md:flex-row">
             <nav class="flex flex-wrap items-center h-full pt-3 pb-5 mb-4 text-base border-b border-gray-800 md:pt-0 md:mb-0 md:border-b-0 md:pr-1 md:mr-1 md:border-r md:pb-0">
                 <a href="#_" class="flex items-center h-full px-4 font-medium leading-6 text-gray-200 hover:text-gray-100 hover:bg-gray-800">Home</a>
-                <a href="#_" class="flex items-center h-full px-4 font-medium leading-6 text-gray-200 hover:text-gray-100 hover:bg-gray-800">About Us</a>
-                <a href="#_" class="flex items-center h-full px-4 font-medium leading-6 text-gray-200 hover:text-gray-100 hover:bg-gray-800">CompAnies</a>
+               
+              
                 <a href="#_" class="flex items-center h-full px-4 font-medium leading-6 text-gray-200 hover:text-gray-100 hover:bg-gray-800">Questions</a>
             </nav>
             <div class="inline-flex items-center justify-center h-full md:justify-end">
@@ -195,10 +195,8 @@
   <section class="py-10 ">
     <div class="px-10 mx-auto max-w-7xl">
         <div class="flex flex-col items-center md:flex-row md:justify-between">
-            <a href="#_" class="flex items-center justify-center w-10 h-10 mr-3 rounded-lg mb-7 bg-gradient-to-br from-purple-500 via-indigo-600 to-blue-500 rounded-xxl">
-                <svg class="w-5 h-5 text-white fill-current" viewBox="0 0 39 15" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M11.252 1.152C4.184 2.526.454 6.918.061 14.329c1.963-4.049 4.798-5.975 8.503-5.778 2.115.112 3.84 1.295 5.75 2.603 3.11 2.133 6.712 4.601 13.281 3.324 7.068-1.374 10.798-5.766 11.191-13.177-1.963 4.049-4.798 5.975-8.503 5.779-2.115-.113-3.84-1.296-5.75-2.604-3.11-2.133-6.712-4.601-13.281-3.324z" fill-rule="evenodd"></path>
-                </svg>
+            <a href="#_" class="w-[130px] h-[48px]">
+            <img src="<?php echo URLROOT ?>../img/logo.png" alt="">
             </a>
 
             <div class="flex flex-row justify-center mb-4 -ml-4 -mr-4"> <a href="#" class="p-4 text-gray-700 hover:text-gray-400"> <svg class="fill-current" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
@@ -214,7 +212,7 @@
                     </svg> </a> </div>
         </div>
         <div class="flex flex-col justify-between text-center md:flex-row">
-            <p class="order-last text-sm leading-tight text-gray-500 md:order-first"> Crafted with <a href="https://devdojo.com/tails" class="text-white">Tails</a>. Built with ❤️ by our team. </p>
+            <p class="order-last text-sm leading-tight text-gray-500 md:order-first"> Crafted with <a href="https://devdojo.com/tails" class="text-white">lorem</a>. Built with ❤️ by our team. </p>
             <ul class="flex flex-row justify-center pb-3 -ml-4 -mr-4 text-sm">
                 <li> <a href="#_" class="px-4 text-gray-500 hover:text-white">Contact</a> </li>
                 <li> <a href="#_" class="px-4 text-gray-500 hover:text-white">About US</a> </li>
@@ -225,4 +223,4 @@
     </div>
 </section>
   </footer>
-<?php require APPROOT . '/views/inc/footer.php'; ?>
+
