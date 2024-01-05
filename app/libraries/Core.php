@@ -4,18 +4,11 @@
    * Creates URL & loads core controller
    * URL FORMAT - /controller/method/params
    */
-<<<<<<< HEAD
-  class Core {
-    protected $currentController = 'Dashboard';
-    protected $currentMethod = 'index';
-    protected $params = [];
-=======
 class Core
 {
   protected $currentController = 'dashboard';
   protected $currentMethod = 'index';
   protected $params = [];
->>>>>>> d130830c1c0699ae2931db0e71b203efbd3eaf1f
 
   public function __construct()
   {
