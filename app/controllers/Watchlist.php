@@ -42,6 +42,4 @@ class Watchlist extends Controller
         );
         $this->view('pages/watchlist',$datalist);
     }
-
-
 }
