@@ -10,11 +10,11 @@ class Watchlist extends Controller
     public function __construct()
     {
     $this->Watchlist = $this->model('Watchlists');
-    $this->coins = $this->model('User');
+    $this->coins = $this->model('dashboardModel');
     
     }
 
-    public function watchlist() {
+    public function index() {
 
         $this->view('pages/watchlist');
     }
@@ -32,7 +32,14 @@ class Watchlist extends Controller
 
         
     }
-    
+
+
+    public function displayCrypto(){
+        $userId = 99999;
+        $data = $this->Watchlist->displayCoinss($userId);
+       
+        $this->view('pages/watchlist',$data);
+    }
 
 
 }

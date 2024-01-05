@@ -13,9 +13,9 @@ $this->db = new Database;
         $row = $this->db->resultSet();
         return $row;
     }
- public function buy(){
     
- }
+
+
 
 
 }

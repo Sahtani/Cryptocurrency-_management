@@ -32,11 +32,9 @@ class Watchlists{
     {
         $this->db->query("SELECT * FROM coins INNER JOIN watchlist ON coins.id = watchlist.Cryptomonnaie_ID AND watchlist.User_ID = $userid ");
         $row = $this->db->resultSet();
+      
         return $row;
     }
-
-  
-
     
     
 }
