@@ -1,13 +1,8 @@
 <?php
-class Dashboard extends Controller
+class Pages extends Controller
 {
-
-  private $Watchlist;
-
-
   public function __construct()
   {
-    $this->Watchlist = $this->model('Watchlists');
   }
 
   public function index()
@@ -20,17 +15,19 @@ class Dashboard extends Controller
     $this->view('pages/index', $data);
   }
 
-  public function watchlist()
+  public function about()
   {
+    $data = [
+      'title' => 'About Us'
+    ];
 
-
-    $this->view('pages/watchlist');
+    $this->view('pages/about', $data);
   }
-
 
   public function dashboard()
   {
-    $data = $this->model('User');
+    $this->model('User');
+    $data = new User();
     $row = $data->displayCoin();
     // $coins = $data->displaywatchlist();
     $data = array(
@@ -38,5 +35,11 @@ class Dashboard extends Controller
       // 'coins'=> $coins,
     );
     $this->view('pages/dashboard', $data);
+  }
+
+  
+  public function Watchlist()
+  {
+    $this->view('pages/watchlist');
   }
 }
