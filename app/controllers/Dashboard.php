@@ -1,5 +1,5 @@
 <?php
-class Pages extends Controller
+class Dashboard extends Controller
 {
   public function __construct()
   {
@@ -26,18 +26,18 @@ class Pages extends Controller
 
   public function dashboard()
   {
-    $this->model('User');
-    $data = new User();
+    $data = $this->model('User');
+
     $row = $data->displayCoin();
     $coins = $data->displaywatchlist();
     $data = array(
       'row' => $row,
-      'coins'=> $coins,
+      'coins' => $coins,
     );
     $this->view('pages/dashboard', $data);
   }
 
-  
+
   public function Watchlist()
   {
     $this->view('pages/watchlist');
