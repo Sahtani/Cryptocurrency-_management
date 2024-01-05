@@ -27,6 +27,11 @@ class Dashboard extends Controller
     $this->view('pages/watchlist');
   }
 
+  public function wallet(){
+
+    $this->view('pages/wallet');
+  }
+
 
   public function dashboard()
   {
