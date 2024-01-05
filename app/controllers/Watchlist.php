@@ -4,9 +4,6 @@ class Watchlist extends Controller
 {
     private $Watchlist;
     private $coins;
-
-
-
     public function __construct()
     {
     $this->Watchlist = $this->model('Watchlists');
@@ -32,7 +29,6 @@ class Watchlist extends Controller
 
         
     }
-
 
     public function displayCrypto(){
         $userId = 99999;

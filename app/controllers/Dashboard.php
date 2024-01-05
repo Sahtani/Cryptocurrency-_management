@@ -20,6 +20,20 @@ class Dashboard extends Controller
     $this->view('pages/index', $data);
   }
 
+  public function watchlist()
+  {
+
+
+    $this->view('pages/watchlist');
+  }
+
+  public function wallet()
+  {
+
+    $this->view('pages/wallet');
+  }
+
+
   public function dashboard()
   {
     $data = $this->model('dashboardModel');
@@ -31,8 +45,4 @@ class Dashboard extends Controller
     );
     $this->view('pages/dashboard', $data);
   }
-  public function loadbuy(){
-    $this->view('pages/buy');
-  }
-
 }
