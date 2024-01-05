@@ -5,7 +5,7 @@ $data = $data['row'];
 <body class="bg-[#111827]">
   <section class="w-full pl-4 h-[57px] bg-gray-900">
     <div class="flex flex-col flex-wrap items-center justify-between h-14 mx-auto md:flex-row max-w-7xl">
-      <a href=""><img src=" <?php echo URLROOT ?>../img/logo.png" class="w-[130px] h-[48px]"></img></a>
+      <a href="<?php echo URLROOT ?>/index"><img src=" <?php echo URLROOT ?>../img/logo.png" class="w-[130px] h-[48px]"></img></a>
       <div class="inline-flex items-center justify-center h-full md:justify-end">
         <a href="#" class="inline-flex items-center justify-center h-full px-4 text-base font-medium leading-6 text-white whitespace-no-wrap transition duration-150 ease-in-out bg-pink-600 border border-transparent hover:bg-pink-500 focus:outline-none focus:border-pink-700 focus:shadow-outline-indigo active:bg-pink-700">
           Logout

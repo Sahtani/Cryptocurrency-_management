@@ -16,7 +16,6 @@ class Dashboard extends Controller
       'title' => 'TraversyMVC',
     ];
 
-
     $this->view('pages/index', $data);
   }
 

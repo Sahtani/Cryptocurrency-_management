@@ -29,7 +29,6 @@ class Watchlist extends Controller
             'row' => $data,
         );
         $this->view('pages/dashboard',$data);
-
         
     }
     
@@ -37,9 +36,6 @@ class Watchlist extends Controller
     public function displayCrypto(){
         $userId = 99999;
         $data = $this->Watchlist->displayCoinss($userId);
-      
-       
-      
 
         $this->view('pages/watchlist',$data); 
     }

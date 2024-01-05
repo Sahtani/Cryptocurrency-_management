@@ -23,5 +23,11 @@ class User
     //     return $row;
     // }
 
-
+    public function addfavorite($userid, $coinsid)
+    {
+        $this->db->query("INSERT INTO watchlist VALUES (:user_id, :cryptomonnaie_id)");
+        $this->db->bind('user_id', $userid);
+        $this->db->bind('cryptomonnaie_id', $coinsid);
+        
+    }
 }
