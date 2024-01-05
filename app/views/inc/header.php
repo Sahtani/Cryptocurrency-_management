@@ -8,5 +8,5 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <title><?php echo SITENAME; ?></title>
 </head>
-<body>
+
   
