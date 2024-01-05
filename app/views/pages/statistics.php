@@ -1,8 +1,11 @@
-<?php require APPROOT . '/views/inc/header.php';
-
+<?php
+require APPROOT . '/views/inc/header.php';
 require APPROOT . '/libraries/Wallet.php';
-$userId = 100001; 
+require APPROOT . '/models/User.php';
+
+$userId = $_SESSION['user_id'] ?? null;
 $wallet = new Wallet();
+$portfolioData = $wallet->getPortfolioValueOverTime($userId);$wallet = new Wallet();
 $portfolioData = $wallet->getPortfolioValueOverTime($userId);
 
 if (!empty($portfolioData) && is_array($portfolioData)) {
@@ -20,12 +23,12 @@ if (!empty($portfolioData) && is_array($portfolioData)) {
       <a href=""><img src=" <?php echo URLROOT ?>../img/logo.png" class="w-[130px] h-[48px]"></img></a>
       <div>
       <div class="inline-flex items-center justify-center h-full md:justify-end">
-        <a href="#" class="inline-flex items-center justify-center h-full px-4 text-base font-medium leading-6 text-white whitespace-no-wrap transition duration-150 ease-in-out bg-pink-600 border border-transparent hover:bg-pink-500 focus:outline-none focus:border-pink-700 focus:shadow-outline-indigo active:bg-pink-700">
+        <a href="<?php echo URLROOT; ?>/users/logout" class="inline-flex items-center justify-center h-full px-4 text-base font-medium leading-6 text-white whitespace-no-wrap transition duration-150 ease-in-out bg-pink-600 border border-transparent hover:bg-pink-500 focus:outline-none focus:border-pink-700 focus:shadow-outline-indigo active:bg-pink-700">
           Logout
         </a>
       </div>
       <div class="inline-flex items-center justify-center h-full md:justify-end">
-        <a href="<?php echo URLROOT; ?>/pages/satiatics" class="inline-flex items-center justify-center h-full px-4 text-base font-medium leading-6 text-white whitespace-no-wrap transition duration-150 ease-in-out bg-pink-600 border border-transparent hover:bg-pink-500 focus:outline-none focus:border-pink-700 focus:shadow-outline-indigo active:bg-pink-700">
+        <a href="<?php echo URLROOT; ?>/pages/wallet" class="inline-flex items-center justify-center h-full px-4 text-base font-medium leading-6 text-white whitespace-no-wrap transition duration-150 ease-in-out bg-pink-600 border border-transparent hover:bg-pink-500 focus:outline-none focus:border-pink-700 focus:shadow-outline-indigo active:bg-pink-700">
           Portfolio
         </a>
       </div>
@@ -216,6 +219,14 @@ if (!empty($portfolioData) && is_array($portfolioData)) {
                         'rgba(54, 162, 235, 0.7)',
                         'rgba(255, 205, 86, 0.7)',
                         'rgba(75, 192, 192, 0.7)',
+                        'rgba(153, 102, 255, 0.7)',
+                        'rgba(255, 159, 64, 0.7)',
+                        'rgba(128, 0, 128, 0.7)',
+                        'rgba(0, 128, 0, 0.7)',
+                        'rgba(0, 0, 128, 0.7)',
+                        'rgba(255, 0, 0, 0.7)',
+                        'rgba(0, 255, 0, 0.7)',
+                        'rgba(0, 0, 255, 0.7)',
                     ],
                     borderColor: [
                         'rgba(255, 99, 132, 1)',

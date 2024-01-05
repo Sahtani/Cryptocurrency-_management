@@ -23,7 +23,6 @@ class Core
       unset($url[0]);
     }
 
-<<<<<<< HEAD
     // Require the controller
     require_once '../app/controllers/' . $this->currentController . '.php';
 
@@ -37,19 +36,7 @@ class Core
         $this->currentMethod = $url[1];
         // Unset 1 index
         unset($url[1]);
-=======
-    public function getUrl(){
-      if(isset($_GET['url'])){
-        $url = rtrim($_GET['url'], '/');
-        $url = filter_var($url, FILTER_SANITIZE_URL);
-        $url = explode('/', $url);
-        
-        // Check if the array is empty before returning
-        return !empty($url) ? $url : [''];
->>>>>>> fb68f6b3398bd7b71351e8e5f6dd9129fc958c02
       }
-      // Return an empty array if "url" is not set
-      return [''];
     }
 
     // Get params

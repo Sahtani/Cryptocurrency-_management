@@ -20,18 +20,16 @@ class Dashboard extends Controller
     $this->view('pages/index', $data);
   }
 
-  public function watchlist()
-  {
-
-
-    $this->view('pages/watchlist');
-  }
-
   public function wallet(){
 
     $this->view('pages/wallet');
   }
-  
+  public function register(){
+    $this->view('pages/register');
+  }
+  public function login(){
+    $this->view('pages/login');
+  }
   public function statistics(){
     $this->view('pages/statistics');
   }
@@ -47,14 +45,10 @@ class Dashboard extends Controller
     );
     $this->view('pages/dashboard', $data);
   }
-<<<<<<< HEAD:app/controllers/Dashboard.php
-=======
-
   
   public function Watchlist()
   {
     $this->view('pages/watchlist');
   }
   
->>>>>>> fb68f6b3398bd7b71351e8e5f6dd9129fc958c02:app/controllers/Pages.php
 }
