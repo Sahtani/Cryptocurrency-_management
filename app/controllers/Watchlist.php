@@ -18,6 +18,10 @@ class Watchlist extends Controller
 
         $this->view('pages/watchlist');
     }
+    public function statistics() {
+
+        $this->view('pages/statistics');
+    }
 
     public function addfavorite($coinId)
     {

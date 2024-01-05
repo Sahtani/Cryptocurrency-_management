@@ -31,7 +31,10 @@ class Dashboard extends Controller
 
     $this->view('pages/wallet');
   }
-
+  
+  public function statistics(){
+    $this->view('pages/statistics');
+  }
 
   public function dashboard()
   {

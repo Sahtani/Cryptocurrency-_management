@@ -1,5 +1,17 @@
 <?php require APPROOT . '/views/inc/header.php';
 
+require APPROOT . '/libraries/Wallet.php';
+$userId = 100001; 
+$wallet = new Wallet();
+$portfolioData = $wallet->getPortfolioValueOverTime($userId);
+
+if (!empty($portfolioData) && is_array($portfolioData)) {
+    $cryptoNames = array_keys($portfolioData);
+    $quantities = array_values($portfolioData);
+} else {
+    $cryptoNames = [];
+    $quantities = [];
+}
 ?>
 
 <body class="bg-[#111827] text-white font-sans">
@@ -14,7 +26,7 @@
       </div>
       <div class="inline-flex items-center justify-center h-full md:justify-end">
         <a href="<?php echo URLROOT; ?>/pages/satiatics" class="inline-flex items-center justify-center h-full px-4 text-base font-medium leading-6 text-white whitespace-no-wrap transition duration-150 ease-in-out bg-pink-600 border border-transparent hover:bg-pink-500 focus:outline-none focus:border-pink-700 focus:shadow-outline-indigo active:bg-pink-700">
-          Statistics
+          Portfolio
         </a>
       </div>
       </div>
@@ -26,7 +38,6 @@
     </div>
     </div>
   </section>
-
 
     <div class="h-0 min-h-[768px]">
 
@@ -185,47 +196,41 @@
                     </div>
                 </div>
             </div>
-            <div class="flex flex-col min-w-0 flex-1 overflow-hidden">
-
-                <main>
-                    <div class="text-center my-4">
-                        <h1 class="text-2xl">
-                            <?php ?>
-                        </h1>
-                    </div>
-
-                    <div class="flex justify-around my-4">
-                        <button class="bg-[#db2777] text-white rounded py-2 px-4">Nexus ID</button>
-                        <button class="bg-[#db2777] text-white rounded py-2 px-4">Sell</button>
-                        <button class="bg-[#db2777] text-white rounded py-2 px-4">Send</button>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 px-4">
-                        <div class="bg-gray-800 p-4 rounded flex items-center">
-                            <img src="solana-icon.png" alt="Solana" class="h-8 mr-2">
-                            <div>
-                                <p>Solana</p>
-                                <p class="text-sm text-gray-400">0 SOL</p>
-                            </div>
-                        </div>
-                        <div class="bg-gray-800 p-4 rounded flex items-center">
-                            <img src="ethereum-icon.png" alt="Ethereum" class="h-8 mr-2">
-                            <div>
-                                <p>Ethereum</p>
-                                <p class="text-sm text-gray-400">0 ETH</p>
-                            </div>
-                        </div>
-                        <div class="bg-gray-800 p-4 rounded flex items-center">
-                            <img src="polygon-icon.png" alt="Polygon" class="h-8 mr-2">
-                            <div>
-                                <p>Polygon</p>
-                                <p class="text-sm text-gray-400">0 MATIC</p>
-                            </div>
-                        </div>
-                    </div>
-                </main>
+                <div class="container mx-auto mt-10">
+                    <canvas id="portfolioChart"></canvas>
+                </div>
 
                 <?php require APPROOT . '/views/inc/footer.php'; ?>
-                    
-                </body>
-                </html>
+                    <script src="../../../public/js/main.js"></script>
+                    <script>
+        // Assuming $cryptoNames and $quantities are available
+        var ctx = document.getElementById('portfolioChart').getContext('2d');
+        var portfolioChart = new Chart(ctx, {
+            type: 'doughnut', // Use 'doughnut' chart type
+            data: {
+                labels: <?php echo json_encode($cryptoNames); ?>,
+                datasets: [{
+                    data: <?php echo json_encode($quantities); ?>,
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.7)',
+                        'rgba(54, 162, 235, 0.7)',
+                        'rgba(255, 205, 86, 0.7)',
+                        'rgba(75, 192, 192, 0.7)',
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 205, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+            }
+        });
+    </script>
+</body>
+</html>
