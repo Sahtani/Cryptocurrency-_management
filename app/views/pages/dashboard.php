@@ -7,7 +7,7 @@ $data = $data['row'];
     <div class="flex flex-col flex-wrap items-center justify-between h-14 mx-auto md:flex-row max-w-7xl">
       <a href=""><img src=" <?php echo URLROOT ?>../img/logo.png" class="w-[130px] h-[48px]"></img></a>
       <div class="inline-flex items-center justify-center h-full md:justify-end">
-        <a href="#" class="inline-flex items-center justify-center h-full px-4 text-base font-medium leading-6 text-white whitespace-no-wrap transition duration-150 ease-in-out bg-pink-600 border border-transparent hover:bg-pink-500 focus:outline-none focus:border-pink-700 focus:shadow-outline-indigo active:bg-pink-700">
+        <a href="<?php echo URLROOT; ?>/users/logout" class="inline-flex items-center justify-center h-full px-4 text-base font-medium leading-6 text-white whitespace-no-wrap transition duration-150 ease-in-out bg-pink-600 border border-transparent hover:bg-pink-500 focus:outline-none focus:border-pink-700 focus:shadow-outline-indigo active:bg-pink-700">
           Logout
         </a>
       </div>
@@ -256,15 +256,15 @@ $data = $data['row'];
                   <div class="col-span-2">
                     <input type="hidden" name="id_crypto">
                     <label for="name" class="block mb-2 text-sm font-medium text-gray-800 ">Name</label>
-                    <input type="text" name="name_crypto" id="name" class="bg-white border focus:outline-none border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-white dark:border-gray-500 dark:placeholder-gray-400 " placeholder="coin name" required="">
+                    <input type="text" name="name_crypto" id="name" value="sol" class="bg-white border focus:outline-none border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-white dark:border-gray-500 dark:placeholder-gray-400 " placeholder="coin name" required="" readonly>
                   </div>
                   <div class="col-span-2 sm:col-span-1">
                     <label for="price" class="block mb-2 text-sm font-medium text-gray-800">Price</label>
-                    <input type="number" name="price" id="price" class="bg-white border focus:outline-none border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-2.5 dark:border-gray-500 dark:placeholder-gray-400   " placeholder="$2999" required="">
+                    <input type="number" name="price" value="$200" id="price" class="bg-white border focus:outline-none border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-2.5 dark:border-gray-500 dark:placeholder-gray-400   " placeholder="$200" required="" readonly>
                   </div>
                   <div class="col-span-2 sm:col-span-1">
-                    <label for="Quant" class="block mb-2 text-sm font-medium text-gray-800 ">Quantite</label>
-                    <input type="number" name="Quant" id="Quant" class="bg-white border focus:outline-none border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-2.5 dark:border-gray-500 dark:placeholder-gray-400  " placeholder="" required="">
+                    <label for="Quant" class="block mb-2 value=" sol" text-sm font-medium text-gray-800 ">Quantite</label>
+                    <input type=" number" name="Quant" id="Quant" class="bg-white border focus:outline-none border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-2.5 dark:border-gray-500 dark:placeholder-gray-400  " placeholder="" required="">
 
                   </div>
 

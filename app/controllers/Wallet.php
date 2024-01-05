@@ -18,10 +18,8 @@ class Wallet extends Controller
     public function buy()
     {
         $Crypto_id=3;
-        $userid=99999;
+        $userid= $_SESSION['user_id'];
        $coin= $this->model->checkCoin($Crypto_id, $userid);
-    //    var_dump($coin);
-    //    die();
        if(count($coin)>0){
        
         if(isset($_POST["submit_buy"])){
@@ -31,9 +29,17 @@ class Wallet extends Controller
         }
             
        }else{
-       if($_POST["submit_buy"]){
+       
+       if(isset($_POST["submit_buy"])){ 
+                $data = [
+                    'Quantite' => trim($_POST['Quant']),
+                    'User_ID' =>$_SESSION['user_id'] ,
+                    'Crypto_id'=>3,
+                   
+                ];
+         $this->model->insertWallet($userid,$data);
+                redirect('s/validation');
 
-         $this->model->insertWallet($userid);
        }
         
        }

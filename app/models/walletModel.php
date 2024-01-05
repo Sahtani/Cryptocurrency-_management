@@ -22,26 +22,26 @@ class walletModel
     {
         $this->db->query("SELECT * FROM wallet where  user_id = $userid and Crypto_id=$Crypto_id");
         $row = $this->db->resultSet();
-       
-            return $row;
-        
+            return $row;    
     }
-    public function insertWallet($user_id)
+    public function insertWallet($user_id, $data)
+    {
+        $this->db->query("INSERT INTO wallet (User_ID, Quantite, Crypto_id) VALUES (:User_ID, :Quantite, :Crypto_id)");
+        $this->db->bind(':User_ID', $data['User_ID']);
+        $this->db->bind(':Quantite', $data['Quantite']);
+        $this->db->bind(':Crypto_id', $data['Crypto_id']);
 
-    {   
-
-        $this->db->query("INSERT into wallet (User_ID,Quantité,Crypto_id,name_crypto) values(:User_ID,:Quantité,:Crypto_id:name_crypto)");
-        $this->db->bind($this->user_id, $this->Quantité, $this->Crypto_id,$this->name_crypto);
-        $row = $this->db->resultSet();
-        return $row;
+        if ($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
     }
+
     public function updateWallet($Crypto_id,$newQuantite)
     {
-
-        $this->db->query("UPDATE  wallet  set Quantité=Quantité+$newQuantite where Crypto_id=$Crypto_id");
+        $this->db->query("UPDATE  wallet  set Quantite=Quantite+$newQuantite where Crypto_id=$Crypto_id");
         $row = $this->db->resultSet();
        
     }
-
-
 }
