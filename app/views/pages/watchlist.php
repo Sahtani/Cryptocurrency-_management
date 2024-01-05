@@ -170,8 +170,6 @@
             <div class="px-3 py-8">
               <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <!-- cards -->
-
-
                 <div class="mt-8 flex flex-col">
                   <div class="-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8">
                     <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
@@ -180,7 +178,6 @@
                           <table class="min-w-full divide-y divide-gray-300">
                             <thead class="bg-gray-50">
                               <tr>
-
                               <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">Favorite</th>
                               <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Ranking</th>
                               <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 ">Name</th>
@@ -193,19 +190,15 @@
                               <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Action</th>
                               </tr>
                             </thead>
-
                             <tbody class="divide-y divide-gray-200 bg-white">
-                            <?php foreach ($data as $coin) { ?>
-                                 
-                                  
+                            <?php foreach ($data as $coin) { ?>     
                                 <tr>
                                   <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 flex items-center ">
                                     <a href='<?= URLROOT; ?>/watchlist/addfavorite/<?= $coin->id; ?>'>
                                       <svg xmlns="http://www.w3.org/2000/svg" height="16" width="18" viewBox="0 0 576 512">
                                         <path fill="#f0cf28" d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z" />
                                       </svg>
-                                    </a>
-                                   
+                                    </a>                                  
                                   </td>
                                   <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6"><?= $coin->name ?></td>  
                                   <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><?= number_format($coin->max_supply ,2)?></td>        
@@ -221,7 +214,7 @@
                                   </tr>
                             <?php } ?>
                       
-</tbody>
+                          </tbody>
                           </table>
                         </div>
                       </div>
