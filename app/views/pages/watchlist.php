@@ -1,4 +1,9 @@
-<?php require APPROOT . '/views/inc/header.php'; ?>
+<?php require APPROOT . '/views/inc/header.php'; 
+$datalist = $datalist['rows'];
+
+// var_dump($data);
+// die();
+?>
 <body class="bg-[#111827]">
 <section class="w-full pl-4 h-[57px] bg-gray-900">
     <div class="flex flex-col flex-wrap items-center justify-between h-14 mx-auto md:flex-row max-w-7xl">

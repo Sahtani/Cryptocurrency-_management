@@ -1,10 +1,5 @@
 <?php require APPROOT . '/views/inc/header.php';
 $data = $data['row'];
-
-// $test = $data['coins'];
-
-// var_dump($test);
-// die();
 ?>
 
 <body class="bg-[#111827]">

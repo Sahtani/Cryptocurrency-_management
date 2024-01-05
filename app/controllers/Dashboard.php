@@ -1,8 +1,13 @@
 <?php
 class Dashboard extends Controller
 {
+
+  private $Watchlist;
+
+
   public function __construct()
   {
+    $this->Watchlist = $this->model('Watchlists');
   }
 
   public function index()
@@ -15,11 +20,12 @@ class Dashboard extends Controller
     $this->view('pages/index', $data);
   }
 
-  public function watchlist() {
-    
+  public function watchlist()
+  {
+
 
     $this->view('pages/watchlist');
-}
+  }
 
 
   public function dashboard()
@@ -33,7 +39,4 @@ class Dashboard extends Controller
     );
     $this->view('pages/dashboard', $data);
   }
-
-
-  
 }

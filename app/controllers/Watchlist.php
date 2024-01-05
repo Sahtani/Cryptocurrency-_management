@@ -35,8 +35,12 @@ class Watchlist extends Controller
 
 
     public function displayCrypto(){
-
-        $this->Watchlist->displayCoins()
+        $userId = 99999;
+        $datalist = $this->Watchlist->displayCoinss($userId);
+        $datalist = array(
+            'rows' => $datalist,
+        );
+        $this->view('pages/watchlist',$datalist);
     }
 
 

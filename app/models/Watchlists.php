@@ -12,7 +12,7 @@ class Watchlists{
     
     public function addFavorite($userid, $coinsid)
     {
-        $result = $this->checkIfFavorite($userid, $coinsid);
+        $result = $this->checkIfFavorite($userid, $coinsid);    
         $this->db->query($result);
         $this->db->bind('user_id', $userid);
         $this->db->bind('cryptomonnaie_id', $coinsid);
@@ -29,8 +29,8 @@ class Watchlists{
         }else return 'INSERT INTO watchlist VALUES (null,:user_id, :cryptomonnaie_id)';
     }
 
-    public function displayCoins($userid, $coinsid){
-        $this->db->query("SELECT * FROM watchlist WHERE user_id = $userid AND cryptomonnaie_id = $coinsid");
+    public function displayCoinss($userid){
+        $this->db->query("SELECT * FROM coins INNER JOIN watchlist ON coins.id = watchlist.Cryptomonnaie_ID AND watchlist.User_ID = $userid ");
         $row = $this->db->resultSet();
         return $row;
         
