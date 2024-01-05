@@ -164,54 +164,15 @@
                                 </div>
                             </nav>
                         </div>
-                        <div class="flex-shrink-0 flex border-t border-gray-200 ">
-                            <a href="#" class="flex-shrink-0 w-full group block">
-                                <div class="flex items-center">
-                                    <div>
-                                        <img class="inline-block h-9 w-9 rounded-full"
-                                            src="https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=8&amp;w=256&amp;h=256&amp;q=80"
-                                            alt="">
-                                    </div>
-                                    <div class="ml-3">
-                                        <p class="text-sm font-medium text-gray-700 group-hover:text-gray-900">
-                                            Whitney Francis
-                                        </p>
-                                        <p class="text-xs font-medium text-gray-500 group-hover:text-gray-700">
-                                            View profile
-                                        </p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
                     </div>
                 </div>
             </div>
             <div class="flex flex-col min-w-0 flex-1 overflow-hidden">
-                <div class="lg:hidden">
-                    <div class="flex items-center justify-between bg-gray-50 border-b border-gray-200 px-4 py-1.5">
-                        <div>
-                        </div>
-                        <div>
-                            <button type="button"
-                                class="-ml-0.5 -mt-0.5 h-12 w-12 inline-flex items-center justify-center rounded-md text-gray-500 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
-                                @click="open = true">
-                                <span class="sr-only">Open sidebar</span>
-                                <svg class="h-6 w-6" x-description="Heroicon name: outline/menu"
-                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor" aria-hidden="true">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M4 6h16M4 12h16M4 18h16">
-                                    </path>
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                </div>
 
                 <main>
                     <div class="text-center my-4">
                         <h1 class="text-2xl">
-                            <?php echo $balance ?>
+                            <?php ?>
                         </h1>
                     </div>
 
