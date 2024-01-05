@@ -286,12 +286,12 @@
           const clickBuyBtn = (e) => {
             // console.log(parseFloat(e.target.parentElement.parentElement.querySelector(".current-price").innerText));
             const coinName = e.target.parentElement.parentElement.querySelector(".coin-name");
-            const currentPrice = e.target.parentElement.parentElement.querySelector(".current-price").innerText;
+            const currentPrice = e.target.parentElement.parentElement.querySelector(".current-price");
             const coinNameInput = document.querySelector("input#name");
             const coinPriceInput = document.querySelector("input#price");
             const coinIdInput = document.querySelector("input#id_crypto");
             coinNameInput.value = coinName.innerText
-            coinPriceInput.value = currentPrice
+            coinPriceInput.value = currentPrice.innerText
             coinIdInput.value = coinName.id;
           }
         </script>

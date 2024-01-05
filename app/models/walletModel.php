@@ -44,4 +44,15 @@ class walletModel
         $row = $this->db->resultSet();
        
     }
+    public function updateWallet_sell($Crypto_id, $newQuantite)
+    {
+        $this->db->query("UPDATE  wallet  set Quantite=Quantite-$newQuantite where Crypto_id=$Crypto_id");
+        $row = $this->db->resultSet();
+    }
+    public function deleteWallet($user_id,$Crypto_id)
+    {
+        $this->db->query("DELETE * FROM  wallet  where Crypto_id=$Crypto_id");
+        $row = $this->db->resultSet();
+    }
+
 }
