@@ -45,4 +45,5 @@ class Dashboard extends Controller
     );
     $this->view('pages/dashboard', $data);
   }
+
 }

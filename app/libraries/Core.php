@@ -6,13 +6,14 @@
    */
 class Core
 {
-  protected $currentController = 'dashboard';
+  protected $currentController = 'User';
   protected $currentMethod = 'index';
   protected $params = [];
 
   public function __construct()
   {
     //print_r($this->getUrl());
+
     $url = $this->getUrl();
 
     // Look in controllers for first value
@@ -46,18 +47,13 @@ class Core
     call_user_func_array([$this->currentController, $this->currentMethod], $this->params);
   }
 
-    public function getUrl(){
-      if(isset($_GET['url'])){
-        $url = rtrim($_GET['url'], '/');
-        $url = filter_var($url, FILTER_SANITIZE_URL);
-        $url = explode('/', $url);
-        
-        // Check if the array is empty before returning
-        return !empty($url) ? $url : [''];
-      }
-      // Return an empty array if "url" is not set
-      return [''];
+  public function getUrl()
+  {
+    if (isset($_GET['url'])) {
+      $url = rtrim($_GET['url'], '/');
+      $url = filter_var($url, FILTER_SANITIZE_URL);
+      $url = explode('/', $url);
+      return $url;
     }
-  } 
-  
-  
+  }
+}
