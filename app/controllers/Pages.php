@@ -11,6 +11,9 @@ class Pages extends Controller
     $data = [
       'title' => 'TraversyMVC',
     ];
+    if(isLoggedIn()){
+      redirect('pages/dashboard');
+  }
 
 
     $this->view('pages/index', $data);
