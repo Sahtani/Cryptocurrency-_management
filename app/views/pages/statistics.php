@@ -4,6 +4,9 @@ require APPROOT . '/libraries/Wallet.php';
 require APPROOT . '/models/User.php';
 
 $userId = $_SESSION['user_id'] ?? null;
+$userID = $_SESSION['user_id'] ?? null;
+$message = "Your transaction was successful.";
+$type = "Transaction";
 $wallet = new Wallet();
 $portfolioData = $wallet->getPortfolioValueOverTime($userId);$wallet = new Wallet();
 $portfolioData = $wallet->getPortfolioValueOverTime($userId);
@@ -15,6 +18,8 @@ if (!empty($portfolioData) && is_array($portfolioData)) {
     $cryptoNames = [];
     $quantities = [];
 }
+$wallet->notifications($userID);
+
 ?>
 
 <body class="bg-[#111827] text-white font-sans">
@@ -199,13 +204,40 @@ if (!empty($portfolioData) && is_array($portfolioData)) {
                     </div>
                 </div>
             </div>
+                
+
                 <div class="container mx-auto mt-10">
                     <canvas id="portfolioChart"></canvas>
                 </div>
+<button onclick="showNotifications()">Show Notifications</button>
 
-                <?php require APPROOT . '/views/inc/footer.php'; ?>
-                    <script src="../../../public/js/main.js"></script>
-                    <script>
+<div id="notification-popup" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <ul id="notification-list"></ul>
+</div>
+            <?php require APPROOT . '/views/inc/footer.php'; ?>
+            <style>
+    .popup {
+    display: none;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f9f9f9;
+    max-width: 300px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.close {
+    float: right;
+    cursor: pointer;
+}
+
+</style>
+    <script src="../../../public/js/main.js"></script>
+    <script>
         // Assuming $cryptoNames and $quantities are available
         var ctx = document.getElementById('portfolioChart').getContext('2d');
         var portfolioChart = new Chart(ctx, {
@@ -242,6 +274,42 @@ if (!empty($portfolioData) && is_array($portfolioData)) {
                 maintainAspectRatio: false,
             }
         });
+    </script>
+    <script>
+        
+        function showNotifications() {
+        const notificationsData = [
+            <?php
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+            ?>
+            { message: '<?php echo $row['Message'];?>', timestamp: '<?php echo $row['Timestamp'];?>', type: '<?php echo $row['Type'];?>' },
+            <?php
+                }
+            } else {
+                echo 'No notifications found.';
+            } 
+            $conn->close();
+            ?>
+        ];
+
+        const notificationList = document.getElementById('notification-list');
+        notificationList.innerHTML = '';
+
+        notificationsData.forEach(notification => {
+            const listItem = document.createElement('li');
+            listItem.innerHTML = `<strong>${notification.type}:</strong> ${notification.message} (${notification.timestamp})`;
+            notificationList.appendChild(listItem);
+        });
+
+        const popup = document.getElementById('notification-popup');
+        popup.style.display = 'block';
+    }
+
+    function closePopup() {
+        const popup = document.getElementById('notification-popup');
+        popup.style.display = 'none';
+    }
     </script>
 </body>
 </html>

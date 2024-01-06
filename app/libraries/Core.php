@@ -13,6 +13,7 @@ class Core
   public function __construct()
   {
     //print_r($this->getUrl());
+
     $url = $this->getUrl();
 
     // Look in controllers for first value
@@ -52,8 +53,7 @@ class Core
       $url = rtrim($_GET['url'], '/');
       $url = filter_var($url, FILTER_SANITIZE_URL);
       $url = explode('/', $url);
-      return !empty($url) ? $url : [''];
+      return $url;
     }
-    return [''];
   }
 }

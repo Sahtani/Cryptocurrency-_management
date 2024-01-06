@@ -41,7 +41,6 @@ class User
             return false;
         }
     }
-
     public function login($email, $password)
     {
         $this->db->query('SELECT * FROM users WHERE Email = :email ');

@@ -20,10 +20,12 @@ class Wallet extends Database {
             return [];
         }
     }
-}
+    public function notifications($userID){
+        // Fetch notifications for the user
+        $sql = "SELECT * FROM `notifications` WHERE `User_ID` = $userID ORDER BY `Timestamp` DESC";
+        $result = $this->reusltExecut($sql);
 
-$userId = 10001;
-$wallet = new Wallet();
-$portfolioData = $wallet->getPortfolioValueOverTime($userId);
+    }
+}
 
 ?>

@@ -36,7 +36,7 @@ class Dashboard extends Controller
 
   public function dashboard()
   {
-    $data = $this->model('User');
+    $data = $this->model('dashboardModel');
     $row = $data->displayCoin();
     // $coins = $data->displaywatchlist();
     $data = array(

@@ -75,6 +75,10 @@
       return $this->stmt->fetchAll(PDO::FETCH_OBJ);
   }
 
+  public function reusltExecut($sql){
+    $this->dbh->query($sql);
+  }
+
   // Get single record as object
   public function single() {
       $this->execute();

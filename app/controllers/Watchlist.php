@@ -4,17 +4,14 @@ class Watchlist extends Controller
 {
     private $Watchlist;
     private $coins;
-
-
-
     public function __construct()
     {
     $this->Watchlist = $this->model('Watchlists');
-    $this->coins = $this->model('User');
+    $this->coins = $this->model('dashboardModel');
     
     }
 
-    public function watchlist() {
+    public function index() {
 
         $this->view('pages/watchlist');
     }

@@ -13,8 +13,8 @@
         <div class="relative flex-col hidden h-full md:flex md:flex-row">
             <nav class="flex flex-wrap items-center h-full pt-3 pb-5 mb-4 text-base border-b border-gray-800 md:pt-0 md:mb-0 md:border-b-0 md:pr-1 md:mr-1 md:border-r md:pb-0">
                 <a href="#_" class="flex items-center h-full px-4 font-medium leading-6 text-gray-200 hover:text-gray-100 hover:bg-gray-800">Home</a>
-                <a href="#_" class="flex items-center h-full px-4 font-medium leading-6 text-gray-200 hover:text-gray-100 hover:bg-gray-800">About Us</a>
-                <a href="#_" class="flex items-center h-full px-4 font-medium leading-6 text-gray-200 hover:text-gray-100 hover:bg-gray-800">CompAnies</a>
+               
+              
                 <a href="#_" class="flex items-center h-full px-4 font-medium leading-6 text-gray-200 hover:text-gray-100 hover:bg-gray-800">Questions</a>
             </nav>
             <div class="inline-flex items-center justify-center h-full md:justify-end">
