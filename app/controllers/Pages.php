@@ -3,6 +3,7 @@ class Pages extends Controller
 {
   public function __construct()
   {
+    
   }
 
   public function index()
@@ -26,14 +27,17 @@ class Pages extends Controller
 
   public function dashboard()
   {
-    $this->model('User');
-    $data = new User();
-    $row = $data->displayCoin();
-    $coins = $data->displaywatchlist();
-    $data = array(
-      'row' => $row,
-      'coins'=> $coins,
-    );
+    if(!isLoggedIn()){
+      redirect('users/index');
+  }
+    // $this->model('User');
+    // $data = new User();
+    // $row = $data->displayCoin();
+    // $coins = $data->displaywatchlist();
+    // $data = array(
+    //   'row' => $row,
+    //   'coins'=> $coins,
+    // );
     $this->view('pages/dashboard', $data);
   }
 

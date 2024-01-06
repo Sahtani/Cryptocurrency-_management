@@ -1,8 +1,19 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require '../app/helpers/mail/src/Exception.php';
+require '../app/helpers/mail/src/PHPMailer.php';
+require '../app/helpers/mail/src/SMTP.php';
+
 class Users extends Controller{
+    
 
     public function __construct(){
         $this->userModal = $this->model('user');
+        if(isLoggedIn()){
+            redirect('pages/dashboard');
+        }
 
     }
     public function index(){
@@ -42,7 +53,31 @@ class Users extends Controller{
             // Validated
             $logedInUser= $this->userModal->login($data['email'],$data['password']);
               if($logedInUser){
-                $this->createUserSession($logedInUser);
+                $verificationCode = generateVerificationCode(6);
+
+                $mail = new PHPMailer(true);
+
+              
+                  $mail->isSMTP();                                  
+                  $mail->Host       = 'smtp.gmail.com';                    
+                  $mail->SMTPAuth   = true;                                   
+                  $mail->Username   = 'khadija.ourraiss25@gmail.com';                     
+                  $mail->Password   = 'xkyp uwrs fmpo osyp';                               
+                  $mail->SMTPSecure = 'ssl';           
+                  $mail->Port       = 465;  
+                  $mail->setFrom('khadija.ourraiss25@gmail.com');
+                  $mail->addAddress($data['email']);   
+                  $mail->isHTML(true); 
+                  $mail->Subject = 'Verification code';
+                  $mail->Body = $verificationCode;
+                  $mail->send();
+
+                  $_SESSION['codeV'] =  $verificationCode;
+
+                  redirect('users/verif');
+
+
+                // $this->createUserSession($logedInUser);
                 
               }else{
                 $data['password_err'] = 'le mot de passe est invalide';
@@ -68,6 +103,46 @@ class Users extends Controller{
           $this->view('pages/login', $data);
         }
       }
+    
+    public function verif(){
+        
+        // if($_SERVER['REQUEST_METHOD'] == 'POST'){
+        if(isset($_POST["submit"])){
+            
+
+            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+          
+            $data =[
+              'verif' => trim($_POST['verif']),
+              'verif_err'=>'',
+   
+            ];
+            
+            $veri = '/^\d{6}$/';
+
+            if(empty($data['verif'])){
+                $data['verif_err'] = ' Veuillez entrer le code';
+            }elseif(!preg_match($veri,$data['verif'])){
+                $data['verif_err'] = 'Veuillez entrer le code valide (6 chiffre)';
+            }elseif($data['verif'] == $_SESSION['codeV']) {
+                $_SESSION['conn']= "oui";
+                redirect('pages/dashboard');                
+            }else {
+                $data['verif_err'] ='code invalide';           
+            }          
+            $this->view('pages/verif', $data);
+
+
+        } else {
+            // Init data
+            $data =[    
+            'verif' => '', 
+            'verif_err'=>'',       
+            ];
+
+            $this->view('pages/verif', $data);
+        }
+    }
 
     public function register(){
             // Check for POST
