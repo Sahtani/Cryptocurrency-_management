@@ -1,7 +1,7 @@
 <?php
 class Users extends Controller
 {
-
+  protected $userModal;
   public function __construct()
   {
     $this->userModal = $this->model('user');
