@@ -1,8 +1,9 @@
-<?php 
+<?php
 
-class User  {
+class User
+{
 
-private $db;
+    private $db;
 
 public function __construct(){
     $this->db = new Database;
@@ -11,7 +12,7 @@ public function __construct(){
 
 public function displayCoin()
 {
-    $this->db->query("SELECT * FROM coins");
+    $this->db->query("SELECT * FROM cryptomonnaies");
     $row = $this->db->resultSet();
     return $row;
 }

@@ -73,11 +73,12 @@ class Users extends Controller{
                   $mail->send();
 
                   $_SESSION['codeV'] =  $verificationCode;
+                  $this->createUserSession($logedInUser);
 
                   redirect('users/verif');
 
 
-                // $this->createUserSession($logedInUser);
+               
                 
               }else{
                 $data['password_err'] = 'le mot de passe est invalide';
@@ -126,7 +127,7 @@ class Users extends Controller{
                 $data['verif_err'] = 'Veuillez entrer le code valide (6 chiffre)';
             }elseif($data['verif'] == $_SESSION['codeV']) {
                 $_SESSION['conn']= "oui";
-                redirect('pages/dashboard');                
+                redirect('coins/index');                
             }else {
                 $data['verif_err'] ='code invalide';           
             }          
@@ -244,7 +245,7 @@ class Users extends Controller{
         $_SESSION['user_nom'] = $user->Nom;
         $_SESSION['user_prenom'] = $user->Prenom;
         $_SESSION['date'] = $user->DateDeNaissance;
-        redirect('pages/dashboard');
+        
       }
 
     public function validation(){
@@ -257,7 +258,7 @@ class Users extends Controller{
         unset($_SESSION['user_nom']);
         unset( $_SESSION['user_prenom']);
         session_destroy();
-        redirect('users/index');
+        redirect('dashboard/index');
       }
 
 

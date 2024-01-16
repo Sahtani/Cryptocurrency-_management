@@ -10,6 +10,6 @@
   // URL Root
   define('URLROOT', 'http://localhost/Cryptocurrency_management');
   // Site Name
-  define('SITENAME', 'NYXUS');
+  define('SITENAME', 'NEXUS');
 
  
