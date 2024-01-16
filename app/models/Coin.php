@@ -18,65 +18,77 @@ class Coin
             'limit' => '75',
             'convert' => 'USD'
         ];
-    
+
         $qs = http_build_query($parameters);
         $request = "{$this->apiUrl}?{$qs}";
-    
+
         $curl = curl_init();
         curl_setopt_array($curl, array(
             CURLOPT_URL => $request,
             CURLOPT_HTTPHEADER => ['Accepts: application/json', "X-CMC_PRO_API_KEY: {$this->apiKey}"],
             CURLOPT_RETURNTRANSFER => 1
         ));
-    
+
         $response = curl_exec($curl);
         $data = json_decode($response, true);
         curl_close($curl);
-    
-        // Check if the 'data' key exists in the response
-        if (isset($data['data'])) {
-            return $data['data'];
-        } else {
-            return [];
-        }
-    }
-    
 
-    public function insertCoin($id, $name, $symbol, $slug, $max_supply)
-    {
-        $query = "INSERT INTO cryptomonnaies(cryptomonnaieID, nom, symbole, slug, max_supply) VALUES (:id, :name, :symbol, :slug, :max_supply)";
-        
-        try {
-            $this->conn->query($query);
-            $this->conn->bind(':id', $id);
-            $this->conn->bind(':name', $name);
-            $this->conn->bind(':symbol', $symbol);
-            $this->conn->bind(':slug', $slug);
-            $this->conn->bind(':max_supply', $max_supply);
-        
-            echo "Executing query: $query<br>";
-            echo "Bound parameters: ";
-            var_dump([$id, $name, $symbol, $slug, $max_supply]);
-        
-            $this->conn->execute();
-            echo "Data inserted successfully!";
-        } catch (PDOException $e) {
-            echo "Error: " . $e->getMessage();
-        }
+        return $data['data'] ?? [];
     }
+
+    public function insertCoin($id, $name, $symbol, $slug, $max_supply) {
+        $this->conn->query("INSERT INTO cryptomonnaies (CryptomonnaieID, nom, symbole, slug, max_supply) VALUES (:id, :name, :symbol, :slug, :max_supply)");
+        $this->conn->bind(':id', $id);
+        $this->conn->bind(':name', $name);
+        $this->conn->bind(':symbol', $symbol);
+        $this->conn->bind(':slug', $slug);
+        $this->conn->bind(':max_supply', $max_supply);
     
+        $this->conn->execute();
+    }
     
 
     public function getCoinByName($name)
     {
-        $this->conn->query("SELECT * FROM cryptomonnaies WHERE Nom= :name");
+        $this->conn->query("SELECT * FROM cryptomonnaies WHERE name = :name");
         $this->conn->bind(':name', $name);
         $this->conn->execute();
 
         return $this->conn->single(PDO::FETCH_ASSOC);
     }
+    
+    public function getCoinById($crypto_id)
+    {
+        $this->conn->query("SELECT * FROM cryptomonnaies WHERE CryptomonnaieID = :crypto_id");
+        $this->conn->bind(':crypto_id', $crypto_id);
+        $this->conn->execute();
+    
+        $result = $this->conn->single(PDO::FETCH_ASSOC);
+        if (!$result) {
+            return null; 
+        }
+    
+        return $result;
+    }
+    
 
+    // public function addToWatchlist($id){
+    //     $this->conn->query("SELECT * FROM watchlist where crypto_id = :id AND user_id = :user");
+    //     $this->conn->bind(':id',$id);
+    //     $this->conn->bind(':user_id',$_SESSION['user_id']);
+    //     $this->conn->execute();
+    //     $row = $this->conn->single(PDO::FETCH_ASSOC);
 
+    //     if ($row) {
+    //         redirect('Pages/watchlist');
+    //     }else{
+    //         $this->conn->query("INSERT INTO watchlist (user_id,crypto_id) VALUES (:user_id,:id)");
+    //         $this->conn->bind(':id', $id);
+    //         $this->conn->bind(':user_id', $_SESSION['user_id']);
+    //         $this->conn->execute();
+    //     }
+    // }
+    
     // public function updateWallet($cryptoId, $qte, $wallet_id){
     //     $this->conn->query("SELECT * FROM crypto_wallet WHERE crypto_id = ? AND wallet_id = ?");
     //     $this->conn->execute([$cryptoId,$wallet_id]);

@@ -3,12 +3,15 @@ class Dashboard extends Controller
 {
 
   private $Watchlist;
+  private $cryptoModel;
+  public $cryptoData;
 
-
-  public function __construct()
-  {
-    $this->Watchlist = $this->model('Watchlists');
+  public function __construct() {
+      $this->cryptoModel = $this->model('Coin');
+       $this->Watchlist = $this->model('Watchlists');
   }
+
+
 
   public function index()
   {
@@ -23,11 +26,24 @@ class Dashboard extends Controller
   public function watchlist()
   {
 
+    $cryptoData = $this->cryptoModel->fetchCryptoData();
+    $data =[
+        'cryptoData'=> $cryptoData,
 
-    $this->view('pages/watchlist');
+    ];
+    foreach ($cryptoData as $crypto) {
+        $existingCoin = $this->cryptoModel->getCoinById($crypto['id']);
+
+        if (!$existingCoin) {
+            $this->cryptoModel->insertCoin($crypto['id'], $crypto['name'], $crypto['symbol'], $crypto['slug'], $crypto['max_supply']);
+        }
+    }
+    $this->view('pages/watchlist' , $data);
+    
   }
 
-  public function wallet(){
+  public function wallet()
+  {
 
     $this->view('pages/wallet');
   }
@@ -35,20 +51,19 @@ class Dashboard extends Controller
 
   public function dashboard()
   {
-    $data = $this->model('User');
-    $row = $data->displayCoin();
-    // $coins = $data->displaywatchlist();
-    $data = array(
-      'row' => $row,
-      // 'coins'=> $coins,
-    );
-    $this->view('pages/dashboard', $data);
-  }
+    $cryptoData = $this->cryptoModel->fetchCryptoData();
+        $data =[
+            'cryptoData'=> $cryptoData,
 
-  
-  public function Watchlist()
-  {
-    $this->view('pages/watchlist');
+        ];
+        foreach ($cryptoData as $crypto) {
+            $existingCoin = $this->cryptoModel->getCoinById($crypto['id']);
+
+            if (!$existingCoin) {
+                $this->cryptoModel->insertCoin($crypto['id'], $crypto['name'], $crypto['symbol'], $crypto['slug'], $crypto['max_supply']);
+            }
+        }
+    $this->view('pages/dashboard', $data);
   }
   
 }

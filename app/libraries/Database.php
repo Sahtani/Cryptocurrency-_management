@@ -80,4 +80,10 @@
     public function rowCount(){
       return $this->stmt->rowCount();
     }
+    public function query_data($sql, $data = [])
+    {
+        $this->stmt = $this->dbh->prepare($sql);
+        $this->stmt->execute($data);
+        return $this->stmt;
+    }
   }
