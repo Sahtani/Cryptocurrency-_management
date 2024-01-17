@@ -33,7 +33,7 @@ class Watchlists
         $this->db->execute();
     }
 
-
+    
 
     public function displayCoinss($userid)
     {
