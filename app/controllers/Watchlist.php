@@ -16,15 +16,13 @@ class Watchlist extends Controller
         $this->view('pages/watchlist');
     }
 
-    public function addfavorite($coinId)
+    public function addfavorite($coinId,$userId)
     {
-
-        $userId = 99999;
-        $this->Watchlist->addFavorite($userId, $coinId);
+        $this->Watchlist->addFavorite($coinId,$userId);
         $data = $this->coins->displayCoin();
-        $data = array(
+        $data = [
             'row' => $data,
-        );
+        ];
         $this->view('pages/dashboard', $data);
     }
 

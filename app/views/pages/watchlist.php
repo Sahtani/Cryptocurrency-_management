@@ -57,22 +57,14 @@
                   Dashboard
                 </a>
 
-<<<<<<< HEAD
-                <a href="" class=" bg-gray-100 text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-base font-medium rounded-md" x-state-description="undefined: &quot;bg-gray-100 text-gray-900&quot;, undefined: &quot;text-gray-600 hover:bg-gray-50 hover:text-gray-900&quot;">
-=======
                 <a href="#" class=" bg-gray-100 text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-base font-medium rounded-md" x-state-description="undefined: &quot;bg-gray-100 text-gray-900&quot;, undefined: &quot;text-gray-600 hover:bg-gray-50 hover:text-gray-900&quot;">
->>>>>>> ccc386dc7ba88a362f3d24927e6e942d4f6b504b
                   <svg class="text-gray-400 group-hover:text-gray-500 mr-4 h-6 w-6" xmlns="http://www.w3.org/2000/svg" height="16" width="18" viewBox="0 0 576 512">
                     <path fill="#7e7f81" d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z" />
                   </svg>
                   Watchlist
                 </a>
 
-<<<<<<< HEAD
-                <a href="<?php echo URLROOT ?>/pages/wallet" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-base font-medium rounded-md" x-state-description="undefined: &quot;bg-gray-100 text-gray-900&quot;, undefined: &quot;text-gray-600 hover:bg-gray-50 hover:text-gray-900&quot;">
-=======
                 <a href="#" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-base font-medium rounded-md" x-state-description="undefined: &quot;bg-gray-100 text-gray-900&quot;, undefined: &quot;text-gray-600 hover:bg-gray-50 hover:text-gray-900&quot;">
->>>>>>> ccc386dc7ba88a362f3d24927e6e942d4f6b504b
                   <svg class="text-gray-400 group-hover:text-gray-500 mr-4 h-6 w-6" xmlns="http://www.w3.org/2000/svg" height="16" width="18" viewBox="0 0 576 512">
                     <path fill="#6b6b6b" d="M304 240V16.6c0-9 7-16.6 16-16.6C443.7 0 544 100.3 544 224c0 9-7.6 16-16.6 16H304zM32 272C32 150.7 122.1 50.3 239 34.3c9.2-1.3 17 6.1 17 15.4V288L412.5 444.5c6.7 6.7 6.2 17.7-1.5 23.1C371.8 495.6 323.8 512 272 512C139.5 512 32 404.6 32 272zm526.4 16c9.3 0 16.6 7.8 15.4 17c-7.7 55.9-34.6 105.6-73.9 142.3c-6 5.6-15.4 5.2-21.2-.7L320 288H558.4z" />
                   </svg>
@@ -119,21 +111,13 @@
                     Dashboard
                   </a>
 
-<<<<<<< HEAD
-                  <a href="<?php echo URLROOT ?>/pages/wallet" class=" bg-gray-200 text-gray-900  hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md" x-state-description="undefined: &quot;bg-gray-200 text-gray-900&quot;, undefined: &quot;text-gray-600 hover:bg-gray-50 hover:text-gray-900&quot;">
-=======
                   <a href="#" class=" bg-gray-200 text-gray-900  hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md" x-state-description="undefined: &quot;bg-gray-200 text-gray-900&quot;, undefined: &quot;text-gray-600 hover:bg-gray-50 hover:text-gray-900&quot;">
->>>>>>> ccc386dc7ba88a362f3d24927e6e942d4f6b504b
                     <svg class="text-gray-400 group-hover:text-gray-500 mr-3 h-6 w-6" xmlns="http://www.w3.org/2000/svg" height="16" width="18" viewBox="0 0 576 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.-->
                       <path fill="#7e7f81" d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z" />
                     </svg>
                     Watchlist
 
-<<<<<<< HEAD
-                    <a href="<?php echo URLROOT ?>/pages/wallet" class="  text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md" x-state-description="undefined: &quot;bg-gray-200 text-gray-900&quot;, undefined: &quot;text-gray-600 hover:bg-gray-50 hover:text-gray-900&quot;">
-=======
                     <a href="#" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md" x-state-description="undefined: &quot;bg-gray-200 text-gray-900&quot;, undefined: &quot;text-gray-600 hover:bg-gray-50 hover:text-gray-900&quot;">
->>>>>>> ccc386dc7ba88a362f3d24927e6e942d4f6b504b
                       <svg class="text-gray-400 group-hover:text-gray-500 mr-3 h-6 w-6" xmlns="http://www.w3.org/2000/svg" height="16" width="18" viewBox="0 0 576 512">
                         <path fill="#6b6b6b" d="M304 240V16.6c0-9 7-16.6 16-16.6C443.7 0 544 100.3 544 224c0 9-7.6 16-16.6 16H304zM32 272C32 150.7 122.1 50.3 239 34.3c9.2-1.3 17 6.1 17 15.4V288L412.5 444.5c6.7 6.7 6.2 17.7-1.5 23.1C371.8 495.6 323.8 512 272 512C139.5 512 32 404.6 32 272zm526.4 16c9.3 0 16.6 7.8 15.4 17c-7.7 55.9-34.6 105.6-73.9 142.3c-6 5.6-15.4 5.2-21.2-.7L320 288H558.4z" />
                       </svg>
@@ -186,62 +170,11 @@
             <div class="px-3 py-8">
               <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <!-- cards -->
-<<<<<<< HEAD
-
-
-=======
->>>>>>> ccc386dc7ba88a362f3d24927e6e942d4f6b504b
                 <div class="mt-8 flex flex-col">
                   <div class="-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8">
                     <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
                       <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-lg">
                         <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-lg">
-<<<<<<< HEAD
-                          <table class="min-w-full divide-y divide-gray-300">
-                            <thead class="bg-gray-50">
-                              <tr>
-
-                                <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">Image</th>
-                                <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">Name</th>
-                                <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Slug</th>
-                                <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Max Supply</th>
-                                <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Current Price</th>
-                                <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Ranking</th>
-                                <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Market Cap</th>
-                                <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Volume 24h</th>
-                                <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Circulating Supply</th>
-                                <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Total Supply</th>
-                                <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Action</th>
-                              </tr>
-                            </thead>
-
-                            <tbody class="divide-y divide-gray-200 bg-white">
-                              <?php
-                              foreach ($data as $coin) { ?>
-                                <tr>
-                                  <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 flex items-center ">
-                                    <a href='<?= URLROOT; ?>/watchlist/addfavorite/<?= $coin->id; ?>'>
-                                      <svg xmlns="http://www.w3.org/2000/svg" height="16" width="18" viewBox="0 0 576 512">
-                                        <path fill="#f0cf28" d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z" />
-                                      </svg>
-                                    </a>
-                                    <img class="h-10 w-10 rounded-full " src="" alt="img">
-                                  </td>
-                                  <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6"><?= $coin->name ?></td>
-                                  <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><?= $coin->slug ?></td>
-                                  <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><?= $coin->max_supply ?></td>
-                                  <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><?= $coin->current_price ?></td>
-                                  <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><?= $coin->ranking ?></td>
-                                  <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><?= $coin->market_cap ?></td>
-                                  <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><?= $coin->volume_24h  ?></td>
-                                  <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><?= $coin->circulating_supply ?></td>
-                                  <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><?= $coin->total_supply ?></td>
-                                  <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                                    <a href="#" class="inline-block px-2 py-1 text-sm font-medium tracking-wide text-center text-white transition duration-200  bg-pink-600 hover:bg-gray-900 ease rounded">Buy</a>
-                                  </td>
-                                <?php } ?>
-                          </table>
-=======
                         <table>
         <thead>
             <tr>
@@ -303,19 +236,15 @@
     </table>
 
 
->>>>>>> ccc386dc7ba88a362f3d24927e6e942d4f6b504b
                         </div>
                       </div>
                     </div>
                   </div>
-<<<<<<< HEAD
-=======
                 </div>
               </div>
             </div>
           </main>
         </div>
->>>>>>> ccc386dc7ba88a362f3d24927e6e942d4f6b504b
 
 
 
