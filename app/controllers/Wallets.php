@@ -11,14 +11,25 @@ class Wallets extends Controller
     }
 
 
+    public function displayCoins()
+    {
+        $userID =  $_SESSION['user_id'];
+        $cryptocurrencies = $this->Wallet->getCryptocurrencies($userID);
+        $data = [
+            'coins' => $cryptocurrencies
+        ];
+
+        $this->view('pages/wallet', $data);
+    }
+
     public function send()
     {
-
         $senderID = $_SESSION['user_id'];
         $recipientID = $_POST['user'];
         $amount = $_POST["amount"];
+        $cryptoID = $_POST["crypto"];
 
-        $transactionResult = $this->Wallet->sendCoins($senderID, $recipientID, $amount);
+        $transactionResult = $this->Wallet->sendCoins($senderID, $recipientID, $amount, $cryptoID);
 
         if ($transactionResult) {
             echo "<p>Transaction successful! Cryptocurrency sent.</p>";
