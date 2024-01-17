@@ -15,26 +15,51 @@ class Watchlists{
         $result = $this->checkIfFavorite($userid, $coinsid);    
         $this->db->query($result);
         $this->db->bind('user_id', $userid);
-        $this->db->bind('cryptomonnaie_id', $coinsid);
+        $this->db->bind('Cryptomonnaie_id', $coinsid);
         $this->db->execute();
         
     }
 
     public function checkIfFavorite($userid, $coinsid){
-        $this->db->query("SELECT * FROM watchlist WHERE user_id = $userid AND cryptomonnaie_id = $coinsid");
+        $this->db->query("SELECT * FROM watchlist WHERE user_id = $userid AND Cryptomonnaie_id = $coinsid");
         $this->db->execute();
         $rows = $this->db->rowCount();
         if($rows > 0){
-            return 'DELETE FROM watchlist WHERE user_id = :user_id AND cryptomonnaie_id = :cryptomonnaie_id';
+            return 'DELETE FROM watchlist WHERE user_id = :user_id AND Cryptomonnaie_id = :Cryptomonnaie_id';
         }else return 'INSERT INTO watchlist VALUES (null,:user_id, :cryptomonnaie_id)';
     }
     public function displayCoinss($userid)
     {
+<<<<<<< HEAD
         $this->db->query("SELECT * FROM coins INNER JOIN watchlist ON coins.id = watchlist.Cryptomonnaie_ID AND watchlist.User_ID = $userid ");
         $row = $this->db->resultSet();
       
         return $row;
+=======
+        $this->db->query("SELECT * FROM cryptomonnaies INNER JOIN watchlist ON cryptomonnaies.CryptomonnaieID  = watchlist.Cryptomonnaie_ID AND watchlist.User_ID = $userid ");
+        $row = $this->db->resultSet();
+      
+        return $row;
     }
+    public function getUserWatchlist($user_id, $cryptoData)
+    {
+        $sql = "SELECT * FROM watchlist WHERE user_id = :user_id";
+        $data = ['user_id' => $user_id];
+        $result = $this->db->query_data($sql, $data)->fetchAll(PDO::FETCH_ASSOC);
     
+        $watchlistData = [];
+        foreach ($result as $watchlistItem) {
+            $cryptoDataItem = array_filter($cryptoData, function ($crypto) use ($watchlistItem) {
+                return $crypto['id'] == $watchlistItem['Cryptomonnaie_ID'];
+            });
+    
+            if (!empty($cryptoDataItem)) {
+                $watchlistData[] = reset($cryptoDataItem);
+            }
+        }
+    
+        return $watchlistData;
+>>>>>>> 659e9ba46788e273e1bb1f8c9d7678ab50f2e067
+    }
     
 }

@@ -2,7 +2,7 @@
 class Coins extends Controller
 {
     private $cryptoModel;
-    public $data;
+    public $cryptoData;
 
     public function __construct() {
         $this->cryptoModel = $this->model('Coin');
@@ -10,26 +10,20 @@ class Coins extends Controller
 
     public function index()
     {
-        $data = $this->cryptoModel->fetchCryptoData();
-        foreach ($data as $crypto) {
-            $existingCoin = $this->cryptoModel->getCoinByName($crypto['name']);
-            var_dump($crypto['name']);
-            $max_supply = $crypto['max_supply'] ?? null;
+        $cryptoData = $this->cryptoModel->fetchCryptoData();
+        $data =[
+            'cryptoData'=> $cryptoData,
+
+        ];
+        foreach ($cryptoData as $crypto) {
+            $existingCoin = $this->cryptoModel->getCoinById($crypto['id']);
+
             if (!$existingCoin) {
-                $this->cryptoModel->insertCoin($crypto['id'], $crypto['name'], $crypto['symbol'], $crypto['slug'], $max_supply);
+                $this->cryptoModel->insertCoin($crypto['id'], $crypto['name'], $crypto['symbol'], $crypto['slug'], $crypto['max_supply']);
             }
         }
-        // $this->view('pages/dashboard',$data);
+         $this->view('pages/dashboard', $data);
     
     }
 
-    // public function buyCrypto(){
-    //     $wallet_id = $_SESSION['wallet_id'];
-    //     $crypto_id = $_POST['crypto_id'];
-    //     $qte = $_POST['qte'];
-
-    //     $this->cryptoModel->updateWallet($crypto_id, $qte, $wallet_id);
-
-    //     // redirect('Cryptos/index');
-    // }
 }

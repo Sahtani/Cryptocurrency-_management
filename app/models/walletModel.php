@@ -44,6 +44,7 @@ class walletModel
         $row = $this->db->resultSet();
        
     }
+<<<<<<< HEAD
     public function updateWallet_sell($Crypto_id, $newQuantite)
     {
         $this->db->query("UPDATE  wallet  set Quantite=Quantite-$newQuantite where Crypto_id=$Crypto_id");
@@ -55,4 +56,6 @@ class walletModel
         $row = $this->db->resultSet();
     }
 
+=======
+>>>>>>> 659e9ba46788e273e1bb1f8c9d7678ab50f2e067
 }

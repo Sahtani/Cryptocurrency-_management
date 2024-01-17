@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 class Users extends Controller
 {
 
@@ -44,6 +45,100 @@ class Users extends Controller
         $logedInUser = $this->userModal->login($data['email'], $data['password']);
         if ($logedInUser) {
           $this->createUserSession($logedInUser);
+=======
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require '../app/helpers/mail/src/Exception.php';
+require '../app/helpers/mail/src/PHPMailer.php';
+require '../app/helpers/mail/src/SMTP.php';
+
+class Users extends Controller{
+    private $userModal;
+
+    public function __construct(){
+        $this->userModal = $this->model('user');
+        if(isLoggedIn()){
+            redirect('pages/dashboard');
+        }
+
+    }
+    public function index(){
+        // Check for POST
+        if($_SERVER['REQUEST_METHOD'] == 'POST'){
+          // Process form
+          // Sanitize POST data
+          $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+          
+          // Init data
+          $data =[
+            'email' => trim($_POST['email']),
+            'password' => trim($_POST['password']),
+            'email_err' => '',
+            'password_err' => '',      
+          ];
+          $pattern_mot_de_passe =  '/^.{8,}$/';
+  
+          // Validate Email
+          if(empty($data['email'])){
+            $data['email_err'] = 'Veuillez entrer email';
+          }elseif($this->userModal->checkEmail($data['email'])){
+      
+          }else{
+            $data['email_err'] = 'Aucun utilisateur trouvé';
+          }
+  
+          // Validate Password
+          if(empty($data['password'])){
+            $data['password_err'] = ' Veuillez entrer le mot de passe';
+          }elseif(!preg_match($pattern_mot_de_passe,$data['password'])){
+              $data['password_err'] = 'Veuillez entrer un mot de passe valide (au moins 8 caractères)';
+            }
+  
+          // Make sure errors are empty
+          if(empty($data['email_err']) && empty($data['password_err'])){
+            // Validated
+            $logedInUser= $this->userModal->login($data['email'],$data['password']);
+              if($logedInUser){
+                $verificationCode = generateVerificationCode(6);
+
+                $mail = new PHPMailer(true);
+
+              
+                  $mail->isSMTP();                                  
+                  $mail->Host       = 'smtp.gmail.com';                    
+                  $mail->SMTPAuth   = true;                                   
+                  $mail->Username   = 'khadija.ourraiss25@gmail.com';                     
+                  $mail->Password   = 'xkyp uwrs fmpo osyp';                               
+                  $mail->SMTPSecure = 'ssl';           
+                  $mail->Port       = 465;  
+                  $mail->setFrom('khadija.ourraiss25@gmail.com');
+                  $mail->addAddress($data['email']);   
+                  $mail->isHTML(true); 
+                  $mail->Subject = 'Verification code';
+                  $mail->Body = $verificationCode;
+                  $mail->send();
+
+                  $_SESSION['codeV'] =  $verificationCode;
+                  $this->createUserSession($logedInUser);
+
+                  redirect('users/verif');
+
+
+               
+                
+              }else{
+                $data['password_err'] = 'le mot de passe est invalide';
+                $this->view('pages/login',$data);
+              
+            }
+          } else {
+            // Load view with errors
+            $this->view('pages/login', $data);
+          }
+  
+  
+>>>>>>> 659e9ba46788e273e1bb1f8c9d7678ab50f2e067
         } else {
           $data['password_err'] = 'le mot de passe est invalide';
           $this->view('pages/login', $data);
@@ -100,6 +195,46 @@ class Users extends Controller
       } elseif ($this->userModal->checkEmail($data['email'])) {
         $data['email_err'] = 'Email déjà utilisé';
       }
+    
+    public function verif(){
+        
+        // if($_SERVER['REQUEST_METHOD'] == 'POST'){
+        if(isset($_POST["submit"])){
+            
+
+            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+          
+            $data =[
+              'verif' => trim($_POST['verif']),
+              'verif_err'=>'',
+   
+            ];
+            
+            $veri = '/^\d{6}$/';
+
+            if(empty($data['verif'])){
+                $data['verif_err'] = ' Veuillez entrer le code';
+            }elseif(!preg_match($veri,$data['verif'])){
+                $data['verif_err'] = 'Veuillez entrer le code valide (6 chiffre)';
+            }elseif($data['verif'] == $_SESSION['codeV']) {
+                $_SESSION['conn']= "oui";
+                redirect('coins/index');                
+            }else {
+                $data['verif_err'] ='code invalide';           
+            }          
+            $this->view('pages/verif', $data);
+
+
+        } else {
+            // Init data
+            $data =[    
+            'verif' => '', 
+            'verif_err'=>'',       
+            ];
+
+            $this->view('pages/verif', $data);
+        }
+    }
 
       // Validate Name
       if (empty($data['nom'])) {
@@ -158,6 +293,7 @@ class Users extends Controller
       // Load view
       $this->view('pages/register', $data);
     }
+<<<<<<< HEAD
   }
   public function createUserSession($user)
   {
@@ -183,3 +319,29 @@ class Users extends Controller
     redirect('users/index');
   }
 }
+=======
+    public function createUserSession($user){
+        $_SESSION['user_id'] = $user->UserID;
+        $_SESSION['user_email'] = $user->Email;
+        $_SESSION['user_nom'] = $user->Nom;
+        $_SESSION['user_prenom'] = $user->Prenom;
+        $_SESSION['date'] = $user->DateDeNaissance;
+        
+      }
+
+    public function validation(){
+        $this->view('pages/validation');
+  
+      }
+    public function logout(){
+        unset($_SESSION['user_id']);
+        unset($_SESSION['user_email']);
+        unset($_SESSION['user_nom']);
+        unset( $_SESSION['user_prenom']);
+        session_destroy();
+        redirect('dashboard/index');
+      }
+
+
+} ?>
+>>>>>>> 659e9ba46788e273e1bb1f8c9d7678ab50f2e067
