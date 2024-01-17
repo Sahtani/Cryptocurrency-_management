@@ -7,7 +7,7 @@ require '../app/helpers/mail/src/PHPMailer.php';
 require '../app/helpers/mail/src/SMTP.php';
 
 class Users extends Controller{
-    
+    private $userModal;
 
     public function __construct(){
         $this->userModal = $this->model('user');
