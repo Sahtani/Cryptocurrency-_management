@@ -6,9 +6,10 @@ class Dashboard extends Controller
   private $cryptoModel;
   public $cryptoData;
 
-  public function __construct() {
-      $this->cryptoModel = $this->model('Coin');
-       $this->Watchlist = $this->model('Watchlists');
+  public function __construct()
+  {
+    $this->cryptoModel = $this->model('Coin');
+    $this->Watchlist = $this->model('Watchlists');
   }
 
 
@@ -19,7 +20,6 @@ class Dashboard extends Controller
       'title' => 'TraversyMVC',
     ];
 
-
     $this->view('pages/index', $data);
   }
 
@@ -27,19 +27,18 @@ class Dashboard extends Controller
   {
 
     $cryptoData = $this->cryptoModel->fetchCryptoData();
-    $data =[
-        'cryptoData'=> $cryptoData,
+    $data = [
+      'cryptoData' => $cryptoData,
 
     ];
     foreach ($cryptoData as $crypto) {
-        $existingCoin = $this->cryptoModel->getCoinById($crypto['id']);
+      $existingCoin = $this->cryptoModel->getCoinById($crypto['id']);
 
-        if (!$existingCoin) {
-            $this->cryptoModel->insertCoin($crypto['id'], $crypto['name'], $crypto['symbol'], $crypto['slug'], $crypto['max_supply']);
-        }
+      if (!$existingCoin) {
+        $this->cryptoModel->insertCoin($crypto['id'], $crypto['name'], $crypto['symbol'], $crypto['slug'], $crypto['max_supply']);
+      }
     }
-    $this->view('pages/watchlist' , $data);
-    
+    $this->view('pages/watchlist', $data);
   }
 
   public function wallet()
@@ -48,22 +47,20 @@ class Dashboard extends Controller
     $this->view('pages/wallet');
   }
 
-
   public function dashboard()
   {
     $cryptoData = $this->cryptoModel->fetchCryptoData();
-        $data =[
-            'cryptoData'=> $cryptoData,
+    $data = [
+      'cryptoData' => $cryptoData,
 
-        ];
-        foreach ($cryptoData as $crypto) {
-            $existingCoin = $this->cryptoModel->getCoinById($crypto['id']);
+    ];
+    foreach ($cryptoData as $crypto) {
+      $existingCoin = $this->cryptoModel->getCoinById($crypto['id']);
 
-            if (!$existingCoin) {
-                $this->cryptoModel->insertCoin($crypto['id'], $crypto['name'], $crypto['symbol'], $crypto['slug'], $crypto['max_supply']);
-            }
-        }
+      if (!$existingCoin) {
+        $this->cryptoModel->insertCoin($crypto['id'], $crypto['name'], $crypto['symbol'], $crypto['slug'], $crypto['max_supply']);
+      }
+    }
     $this->view('pages/dashboard', $data);
   }
-  
 }
