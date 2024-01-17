@@ -16,13 +16,21 @@ class Watchlist extends Controller
         $this->view('pages/watchlist');
     }
 
-    public function addfavorite($coinId,$userId)
+    public function addfavorite($coinId, $userId)
     {
-        $this->Watchlist->addFavorite($coinId,$userId);
-        $data = $this->coins->displayCoin();
+        $this->Watchlist->addFavorite($coinId, $userId);
+        $cryptoData = $this->coins->fetchCryptoData();
         $data = [
-            'row' => $data,
+            'cryptoData' => $cryptoData,
+
         ];
+        foreach ($cryptoData as $crypto) {
+            $existingCoin = $this->coins->getCoinById($crypto['id']);
+
+            if (!$existingCoin) {
+                $this->coins->insertCoin($crypto['id'], $crypto['name'], $crypto['symbol'], $crypto['slug'], $crypto['max_supply']);
+            }
+        }
         $this->view('pages/dashboard', $data);
     }
 
