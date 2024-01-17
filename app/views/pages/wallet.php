@@ -183,15 +183,21 @@
 
                 <main>
                     <div class="text-center my-4 ">
-                        <h1 class="text-2xl">
-                            <?php echo $data->Quantité ?>$
+                        <!-- <h1 class="text-2xl hidden " id="qtn">
+                            //<?php $data['totalQuantite'] ?>$
+                        </h1> -->
+                        <h1 class="text-2xl " id="pricehna">
+                            <?php echo $data['totalQuantite'] ?>$
                         </h1>
                     </div>
 
                     <div class="flex justify-around my-4">
-                        <button class="bg-[#db2777] text-white rounded py-2 px-4">Nexus ID : <?php echo $data->User_ID ?></button>
+                        <button class="bg-[#db2777] text-white rounded py-2 px-4">Nexus ID :
+                            <?php echo $data['User_ID'] ?>
+                        </button>
                         <button class="bg-[#db2777] text-white rounded py-2 px-4">Sell</button>
-                        <button class="bg-[#db2777] text-white rounded py-2 px-4">Send</button>
+                        <a href="<?php echo URLROOT ?>/Wallet/send"
+                            class="bg-[#db2777] text-white rounded py-2 px-4">Send</a>
                         <button class="bg-[#db2777] text-white rounded py-2 px-4">Stat</button>
                     </div>
 
@@ -225,3 +231,14 @@
 </body>
 
 </html>
+
+<script>
+    let qtn = parseInt(document.getElementById('qtn').innerText);
+    console.log(qtn);
+    // let price = parseInt(document.getElementById('price').innerText);
+
+    let price = 3;
+    let totalvalue = qtn * price;
+    // let pricehna =document.getElementById('pricehna');
+    pricehna.innerText = totalvalue; 
+</script>

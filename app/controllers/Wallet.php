@@ -22,7 +22,28 @@ class Wallet extends Controller
     {
         $userId = 99999;
         $data = $this->model->getWallet($userId);
+        $totalQuantite = 0;
+        foreach ($data as $entry) {
+            $totalQuantite += floatval($entry['Quantité']);
+        }
+
+        // Add the totalQuantite to the data array
+        $data['totalQuantite'] = $totalQuantite;
+        $data['User_ID'] = $userId;
+
+
 
         $this->view('pages/wallet', $data);
+    }
+
+    public function send()
+    {
+
+        $data = [
+            'Id' => $_POST["User_id"],
+            'amount' => $_POST["amount"],
+        ];
+
+        $this->view('pages/send', $data);
     }
 }
