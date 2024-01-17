@@ -47,12 +47,6 @@ class Dashboard extends Controller
     $this->view('pages/wallet');
   }
 
-  public function wallet(){
-
-    $this->view('pages/wallet');
-  }
-
-
   public function dashboard()
   {
     $cryptoData = $this->cryptoModel->fetchCryptoData();
