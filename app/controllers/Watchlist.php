@@ -4,17 +4,14 @@ class Watchlist extends Controller
 {
     private $Watchlist;
     private $coins;
-
-
-
     public function __construct()
     {
-    $this->Watchlist = $this->model('Watchlists');
-    $this->coins = $this->model('User');
-    
+        $this->Watchlist = $this->model('Watchlists');
+        $this->coins = $this->model('Coin');
     }
 
-    public function watchlist() {
+    public function index()
+    {
 
         $this->view('pages/watchlist');
     }
@@ -28,17 +25,14 @@ class Watchlist extends Controller
         $data = array(
             'row' => $data,
         );
-        $this->view('pages/dashboard',$data);
-        
+        $this->view('pages/dashboard', $data);
     }
-    
-    
-    public function displayCrypto(){
+
+    public function displayCrypto()
+    {
         $userId = 99999;
-        $data = $this->Watchlist->displayCoinss($userId);
-
-        $this->view('pages/watchlist',$data); 
+        $cryptoData = $this->coins->fetchCryptoData();
+        $data = $this->Watchlist->getUserWatchlist($userId, $cryptoData);
+        $this->view('pages/watchlist', $data);
     }
-
-
 }
