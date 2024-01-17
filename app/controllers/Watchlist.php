@@ -36,7 +36,7 @@ class Watchlist extends Controller
 
     public function displayCrypto()
     {
-        $userId = 99999;
+        $userId = $_SESSION['user_id'];
         $cryptoData = $this->coins->fetchCryptoData();
         $data = $this->Watchlist->getUserWatchlist($userId, $cryptoData);
         $this->view('pages/watchlist', $data);

@@ -2,7 +2,7 @@
 
 ?>
 
-<body class="bg-[#111827] text-black font-sans">
+<body class="bg-white text-white font-sans">
     <section class="w-full pl-4 h-[57px] bg-gray-900">
         <div class="flex flex-col flex-wrap items-center justify-between h-14 mx-auto md:flex-row max-w-7xl">
             <a href=""><img src=" <?php echo URLROOT ?>../img/logo.png" class="w-[130px] h-[48px]"></img></a>
@@ -46,7 +46,7 @@
                         <nav aria-label="Sidebar" class="mt-5">
                             <div class="px-2 space-y-1">
 
-                                <a href="<?php echo URLROOT ?>pages/watchlist" class="bg-gray-100 text-gray-900 group flex items-center px-2 py-2 text-base font-medium rounded-md" x-state:on="Current" x-state:off="Default" x-state-description="Current: &quot;bg-gray-100 text-gray-900&quot;, Default: &quot;text-gray-600 hover:bg-gray-50 hover:text-gray-900&quot;">
+                                <a href="<?php echo URLROOT ?>/pages/dashboard" class=" text-gray-900 group flex items-center px-2 py-2 text-base font-medium rounded-md" x-state:on="Current" x-state:off="Default" x-state-description="Current: &quot;bg-gray-100 text-gray-900&quot;, Default: &quot;text-gray-600 hover:bg-gray-50 hover:text-gray-900&quot;">
                                     <svg class="text-gray-400 group-hover:text-gray-500 mr-4 h-6 w-6" xmlns="http://www.w3.org/2000/svg" height="16" width="18" viewBox="0 0 576 512">
                                         <path fill="#727274" d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z" />
                                     </svg>
@@ -60,7 +60,7 @@
                                     Watchlist
                                 </a>
 
-                                <a href="#" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-base font-medium rounded-md" x-state-description="undefined: &quot;bg-gray-100 text-gray-900&quot;, undefined: &quot;text-gray-600 hover:bg-gray-50 hover:text-gray-900&quot;">
+                                <a href="#" class=" bg-gray-200 text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-base font-medium rounded-md" x-state-description="undefined: &quot;bg-gray-100 text-gray-900&quot;, undefined: &quot;text-gray-600 hover:bg-gray-50 hover:text-gray-900&quot;">
                                     <svg class="text-gray-400 group-hover:text-gray-500 mr-4 h-6 w-6" xmlns="http://www.w3.org/2000/svg" height="16" width="18" viewBox="0 0 576 512">
                                         <path fill="#6b6b6b" d="M304 240V16.6c0-9 7-16.6 16-16.6C443.7 0 544 100.3 544 224c0 9-7.6 16-16.6 16H304zM32 272C32 150.7 122.1 50.3 239 34.3c9.2-1.3 17 6.1 17 15.4V288L412.5 444.5c6.7 6.7 6.2 17.7-1.5 23.1C371.8 495.6 323.8 512 272 512C139.5 512 32 404.6 32 272zm526.4 16c9.3 0 16.6 7.8 15.4 17c-7.7 55.9-34.6 105.6-73.9 142.3c-6 5.6-15.4 5.2-21.2-.7L320 288H558.4z" />
                                     </svg>
@@ -100,7 +100,7 @@
                             <nav class=" flex-1 bg-gray-900 pt-5" aria-label="Sidebar">
                                 <div class="px-2 space-y-1">
 
-                                    <a href="#" class="bg-gray-200 text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md" x-state:on="Current" x-state:off="Default" x-state-description="Current: &quot;bg-gray-200 text-gray-900&quot;, Default: &quot;text-gray-600 hover:bg-gray-50 hover:text-gray-900&quot;">
+                                    <a href="<?php echo URLROOT ?>/pages/dashboard" class=" text-gray-600 group flex items-center px-2 py-2 text-sm font-medium rounded-md" x-state:on="Current" x-state:off="Default" x-state-description="Current: &quot;bg-gray-200 text-gray-900&quot;, Default: &quot;text-gray-600 hover:bg-gray-50 hover:text-gray-900&quot;">
                                         <svg class="text-gray-400 group-hover:text-gray-500 mr-3 h-6 w-6" xmlns="http://www.w3.org/2000/svg" height="16" width="18" viewBox="0 0 576 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.-->
                                             <path fill="#727274" d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z" />
                                         </svg>
@@ -113,7 +113,7 @@
                                         </svg>
                                         Watchlist
 
-                                        <a href="#" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md" x-state-description="undefined: &quot;bg-gray-200 text-gray-900&quot;, undefined: &quot;text-gray-600 hover:bg-gray-50 hover:text-gray-900&quot;">
+                                        <a href="#" class=" bg-gray-200 text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md" x-state-description="undefined: &quot;bg-gray-200 text-gray-900&quot;, undefined: &quot;text-gray-600 hover:bg-gray-50 hover:text-gray-900&quot;">
                                             <svg class="text-gray-400 group-hover:text-gray-500 mr-3 h-6 w-6" xmlns="http://www.w3.org/2000/svg" height="16" width="18" viewBox="0 0 576 512">
                                                 <path fill="#6b6b6b" d="M304 240V16.6c0-9 7-16.6 16-16.6C443.7 0 544 100.3 544 224c0 9-7.6 16-16.6 16H304zM32 272C32 150.7 122.1 50.3 239 34.3c9.2-1.3 17 6.1 17 15.4V288L412.5 444.5c6.7 6.7 6.2 17.7-1.5 23.1C371.8 495.6 323.8 512 272 512C139.5 512 32 404.6 32 272zm526.4 16c9.3 0 16.6 7.8 15.4 17c-7.7 55.9-34.6 105.6-73.9 142.3c-6 5.6-15.4 5.2-21.2-.7L320 288H558.4z" />
                                             </svg>
@@ -127,19 +127,19 @@
                     </div>
                 </div>
             </div>
-            <div class="flex flex-col min-w-0 flex-1 overflow-hidden bg-white">
+            <div class="flex flex-col min-w-0 flex-1 overflow-hidden">
 
                 <main>
-                    <div class="text-center my-4 ">
+                    <div class="text-center my-4">
                         <h1 class="text-2xl">
-                            <?php echo $data->wallet ?>
+                            <?php ?>
                         </h1>
                     </div>
 
                     <div class="flex justify-around my-4">
                         <button class="bg-[#db2777] text-white rounded py-2 px-4">Nexus ID</button>
                         <button class="bg-[#db2777] text-white rounded py-2 px-4">Sell</button>
-                        <button class="bg-[#db2777] text-white rounded py-2 px-4">Send</button>
+                        <button class="bg-[#db2777] text-white rounded py-2 px-4" id="openModalBtn">Send</button>
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 px-4">
@@ -167,7 +167,60 @@
                     </div>
                 </main>
 
+                <div id="myModal" class="modal hidden fixed inset-0 bg-white bg-opacity-30 flex items-center justify-center">
+                    <div class="w-full h-full flex items-center justify-center">
+                        <div class="modal-content bg-[#db2777]  p-8 rounded-md shadow-[rgba(0,_0,_0,_0.4)_0px_30px_90px]">
+                            <!-- Your form goes here -->
+                            <form method="post" action="<?php echo URLROOT ?>/wallets/send">
+                            <div class="grid gap-4 mb-4 grid-cols-2">
+                                <div class="mb-4">
+                                    <label for="user" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">User:</label>
+                                    <input type="text" id="user" name="user" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500" required>
+                                </div>
+
+                                <div class="col-span-2 sm:col-span-1">
+                                    <label for="category" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Category</label>
+                                    <select id="category" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
+                                        <option selected="">Select category</option>
+                                        <option value="TV">btc</option>
+                                        <option value="PC">solana</option>
+                                        <option value="GA">usdt</option>
+                                        <option value="PH">dogecoin</option>
+                                    </select>
+                                </div>
+                            </div>
+                                <div class="mb-4">
+                                    <label for="amount" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Amount:</label>
+                                    <input type="number" id="amount" name="amount" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="$2999" required>
+                                </div>
+                                <button type="submit" class="bg-[#111827] hover:bg-[#db2777] text-white px-4 py-2 rounded-md">
+                                    Send Cryptocurrency
+                                </button>
+
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+
                 <?php require APPROOT . '/views/inc/footer.php'; ?>
+                <script>
+                    var modal = document.getElementById('myModal');
+                    var btn = document.getElementById('openModalBtn');
+
+
+                    btn.onclick = function() {
+                        modal.style.display = 'block';
+                    }
+
+
+                    window.onclick = function(event) {
+                        if (event.target == modal) {
+                            modal.style.display = 'none';
+                        }
+                    }
+                </script>
 
 </body>
 
