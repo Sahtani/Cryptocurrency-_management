@@ -223,4 +223,4 @@
     </div>
 </section>
   </footer>
-
+  <?php require APPROOT . '/views/inc/footer.php'; ?>
