@@ -12,7 +12,7 @@ class User
 
     public function displayCoin()
     {
-        $this->db->query("SELECT * FROM coins");
+        $this->db->query("SELECT * FROM cryptomonnaies");
         $row = $this->db->resultSet();
         return $row;
     }

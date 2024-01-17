@@ -7,11 +7,8 @@
     <title>Notification Popup</title>
 </head>
 <body>
-
-<!-- Button to open the popup -->
 <button onclick="openNotificationPopup()">Voir les notifications</button>
 
-<!-- The Notification Popup -->
 <div id="notificationPopup" class="notification-popup">
     <span class="close-btn" onclick="closeNotificationPopup()">&times;</span>
     <h2>Notifications</h2>
@@ -53,13 +50,11 @@
 
 </style>
 <script>
-    // scripts.js
 
 function openNotificationPopup() {
     var popup = document.getElementById('notificationPopup');
     popup.style.display = 'block';
 
-    // Call a function to fetch and display notifications
     fetchNotifications();
 }
 
@@ -69,8 +64,7 @@ function closeNotificationPopup() {
 }
 
 function fetchNotifications() {
-    // Replace this with your code to fetch notifications from the server
-    // Example: Assume notifications is an array of notification messages
+
     var notifications = ["Notification 1", "Notification 2", "Notification 3"];
 
     var notificationList = document.getElementById('notificationList');

@@ -30,7 +30,7 @@ class Watchlists{
     }
     public function displayCoinss($userid)
     {
-        $this->db->query("SELECT * FROM coins INNER JOIN watchlist ON coins.id = watchlist.Cryptomonnaie_ID AND watchlist.User_ID = $userid ");
+        $this->db->query("SELECT * FROM cryptomonnaies INNER JOIN watchlist ON cryptomonnaies.User_ID = watchlist.Cryptomonnaie_ID AND watchlist.User_ID = $userid ");
         $row = $this->db->resultSet();
       
         return $row;

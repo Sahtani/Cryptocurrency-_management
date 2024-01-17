@@ -45,6 +45,13 @@ $wallet->notifications($userID);
       </svg>
     </div>
     </div>
+    
+<button onclick="showNotifications()">Show Notifications</button>
+
+<div id="notification-popup" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <ul id="notification-list"></ul>
+</div>
   </section>
 
     <div class="h-0 min-h-[768px]">
@@ -204,17 +211,10 @@ $wallet->notifications($userID);
                     </div>
                 </div>
             </div>
-                
-
                 <div class="container mx-auto mt-10">
                     <canvas id="portfolioChart"></canvas>
                 </div>
-<button onclick="showNotifications()">Show Notifications</button>
 
-<div id="notification-popup" class="popup">
-    <span class="close" onclick="closePopup()">&times;</span>
-    <ul id="notification-list"></ul>
-</div>
             <?php require APPROOT . '/views/inc/footer.php'; ?>
             <style>
     .popup {
@@ -275,41 +275,6 @@ $wallet->notifications($userID);
             }
         });
     </script>
-    <script>
-        
-        function showNotifications() {
-        const notificationsData = [
-            <?php
-            if ($result->num_rows > 0) {
-                while ($row = $result->fetch_assoc()) {
-            ?>
-            { message: '<?php echo $row['Message'];?>', timestamp: '<?php echo $row['Timestamp'];?>', type: '<?php echo $row['Type'];?>' },
-            <?php
-                }
-            } else {
-                echo 'No notifications found.';
-            } 
-            $conn->close();
-            ?>
-        ];
-
-        const notificationList = document.getElementById('notification-list');
-        notificationList.innerHTML = '';
-
-        notificationsData.forEach(notification => {
-            const listItem = document.createElement('li');
-            listItem.innerHTML = `<strong>${notification.type}:</strong> ${notification.message} (${notification.timestamp})`;
-            notificationList.appendChild(listItem);
-        });
-
-        const popup = document.getElementById('notification-popup');
-        popup.style.display = 'block';
-    }
-
-    function closePopup() {
-        const popup = document.getElementById('notification-popup');
-        popup.style.display = 'none';
-    }
-    </script>
+    
 </body>
 </html>

@@ -7,10 +7,6 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/style.css">
   <script src="https://cdn.tailwindcss.com"></script>
-<<<<<<< HEAD
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-=======
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
->>>>>>> 9ece6bf3f292e1fb05f129db44bade223b384bda
   <title><?php echo SITENAME; ?></title>
 </head>
