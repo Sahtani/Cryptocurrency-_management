@@ -184,7 +184,7 @@
                                 <div class="grid gap-4 mb-4 grid-cols-2">
                                     <div class="mb-4">
                                         <label for="user" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">User:</label>
-                                        <input type="text" id="user" name="user" class="w-full px-3 py-2 border text-gray-900 rounded-md focus:outline-none focus:border-blue-500" required>
+                                        <input type="text" id="user" name="user" class="w-full px-3 py-2 border text-gray-900 rounded-md focus:outline-none focus:border-blue-500"  placeholder="id OR email" required>
                                     </div>
 
                                     <div class="col-span-2 sm:col-span-1">
