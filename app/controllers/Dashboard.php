@@ -2,6 +2,7 @@
 class Dashboard extends Controller
 {
 
+  private $cryptoModel;
   private $Watchlist;
   private $model;
 
@@ -11,6 +12,8 @@ class Dashboard extends Controller
     $this->Watchlist = $this->model('Watchlists');
     $this->model = $this->model('Wallets');
   }
+
+
 
   public function index()
   {
@@ -33,13 +36,18 @@ class Dashboard extends Controller
 
   public function dashboard()
   {
-    $data = $this->model('User');
-    $row = $data->displayCoin();
-    // $coins = $data->displaywatchlist();
-    $data = array(
-      'row' => $row,
-      // 'coins'=> $coins,
-    );
+    $cryptoData = $this->cryptoModel->fetchCryptoData();
+    $data = [
+      'cryptoData' => $cryptoData,
+
+    ];
+    foreach ($cryptoData as $crypto) {
+      $existingCoin = $this->cryptoModel->getCoinById($crypto['id']);
+
+      if (!$existingCoin) {
+        $this->cryptoModel->insertCoin($crypto['id'], $crypto['name'], $crypto['symbol'], $crypto['slug'], $crypto['max_supply']);
+      }
+    }
     $this->view('pages/dashboard', $data);
   }
 

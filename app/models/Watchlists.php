@@ -16,7 +16,7 @@ class Watchlists
         $result = $this->checkIfFavorite($userid, $coinsid);
         $this->db->query($result);
         $this->db->bind('user_id', $userid);
-        $this->db->bind('cryptomonnaie_id', $coinsid);
+        $this->db->bind('Cryptomonnaie_id', $coinsid);
         $this->db->execute();
 
     }
