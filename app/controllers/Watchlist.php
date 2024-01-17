@@ -7,11 +7,7 @@ class Watchlist extends Controller
     public function __construct()
     {
     $this->Watchlist = $this->model('Watchlists');
-<<<<<<< HEAD
-    $this->coins = $this->model('dashboardModel');
-=======
     $this->coins = $this->model('Coin');
->>>>>>> 659e9ba46788e273e1bb1f8c9d7678ab50f2e067
     
     }
 

@@ -1,4 +1,11 @@
-<?php require APPROOT . '/views/inc/header.php'; ?>
+<?php require APPROOT . '/views/inc/header.php';
+
+
+// var_dump($data);
+// die();
+
+
+?>
 
 <body class="bg-[#111827]">
   <section class="w-full pl-4 h-[57px] bg-gray-900">
@@ -43,7 +50,7 @@
             <nav aria-label="Sidebar" class="mt-5">
               <div class="px-2 space-y-1">
 
-                <a href="#" class=" text-gray-900 group flex items-center px-2 py-2 text-base font-medium rounded-md" x-state:on="Current" x-state:off="Default" x-state-description="Current: &quot;bg-gray-100 text-gray-900&quot;, Default: &quot;text-gray-600 hover:bg-gray-50 hover:text-gray-900&quot;">
+                <a href="<?php echo URLROOT ?>/pages/dashboard" class=" text-gray-900 group flex items-center px-2 py-2 text-base font-medium rounded-md" x-state:on="Current" x-state:off="Default" x-state-description="Current: &quot;bg-gray-100 text-gray-900&quot;, Default: &quot;text-gray-600 hover:bg-gray-50 hover:text-gray-900&quot;">
                   <svg class="text-gray-400 group-hover:text-gray-500 mr-4 h-6 w-6" xmlns="http://www.w3.org/2000/svg" height="16" width="18" viewBox="0 0 576 512">
                     <path fill="#727274" d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z" />
                   </svg>
@@ -97,11 +104,7 @@
               <nav class=" flex-1 bg-gray-900 pt-5" aria-label="Sidebar">
                 <div class="px-2 space-y-1">
 
-<<<<<<< HEAD
-                  <a href="#" class="text-gray-600 group flex items-center px-2 py-2 text-sm font-medium rounded-md" x-state:on="Current" x-state:off="Default" x-state-description="Current: &quot;bg-gray-200 text-gray-900&quot;, Default: &quot;text-gray-600 hover:bg-gray-50 hover:text-gray-900&quot;">
-=======
                   <a href="<?php echo URLROOT ?>/coins/index" class="text-gray-600 group flex items-center px-2 py-2 text-sm font-medium rounded-md" x-state:on="Current" x-state:off="Default" x-state-description="Current: &quot;bg-gray-200 text-gray-900&quot;, Default: &quot;text-gray-600 hover:bg-gray-50 hover:text-gray-900&quot;">
->>>>>>> 659e9ba46788e273e1bb1f8c9d7678ab50f2e067
                     <svg class="text-gray-400 group-hover:text-gray-500 mr-3 h-6 w-6" xmlns="http://www.w3.org/2000/svg" height="16" width="18" viewBox="0 0 576 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.-->
                       <path fill="#727274" d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z" />
                     </svg>
@@ -163,57 +166,15 @@
 
         <div class="flex-1 relative z-0 flex overflow-hidden">
           <main class="flex-1 relative z-0 overflow-y-auto focus:outline-none xl:order-last">
-            <h1 class="text-3xl p-10 font-medium text-gray-900">Today's Cryptocurrency Prices by Market Cap</h1>
+            <h1 class="text-3xl p-10 font-medium text-gray-900">Main Watchlist</h1>
             <div class="px-3 py-8">
               <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <!-- cards -->
-
-
                 <div class="mt-8 flex flex-col">
                   <div class="-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8">
                     <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
                       <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-lg">
                         <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-lg">
-<<<<<<< HEAD
-                          <table class="min-w-full divide-y divide-gray-300">
-                            <thead class="bg-gray-50">
-                              <tr>
-
-                                <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">Image</th>
-                                <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">Name</th>
-                                <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Slug</th>
-                                <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Max Supply</th>
-                                <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Current Price</th>
-                                <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Ranking</th>
-                                <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Market Cap</th>
-                                <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Volume 24h</th>
-                                <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Circulating Supply</th>
-                                <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Total Supply</th>
-                                <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Action</th>
-                              </tr>
-                            </thead>
-
-                            <tbody class="divide-y divide-gray-200 bg-white">
-                              <tr>
-                                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 flex items-center ">
-                                  <img class="h-10 w-10 rounded-full " src="" alt="img">
-                                </td>
-                                <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">Lorem, ipsum.</td>
-                                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">Lorem, ipsum dolor.</td>
-                                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">Lorem.</td>
-                                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">lorem</td>
-                                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">lorem</td>
-                                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">lorem</td>
-                                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">lorem</td>
-                                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">lorem</td>
-                                <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">lorem</td>
-                                <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                                  <a href="#" class="inline-block px-2 py-1 text-sm font-medium tracking-wide text-center text-white transition duration-200  bg-pink-600 hover:bg-gray-900 ease rounded">Buy</a>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-=======
                         <table>
         <thead>
             <tr>
@@ -275,7 +236,6 @@
     </table>
 
 
->>>>>>> 659e9ba46788e273e1bb1f8c9d7678ab50f2e067
                         </div>
                       </div>
                     </div>

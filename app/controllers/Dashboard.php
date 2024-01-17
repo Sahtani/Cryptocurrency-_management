@@ -51,18 +51,6 @@ class Dashboard extends Controller
 
   public function dashboard()
   {
-<<<<<<< HEAD
-    $data = $this->model('dashboardModel');
-    $row = $data->displayCoin();
-    // $coins = $data->displaywatchlist();
-    $data = array(
-      'row' => $row,
-      // 'coins'=> $coins,
-    );
-    $this->view('pages/dashboard', $data);
-  }
-
-=======
     $cryptoData = $this->cryptoModel->fetchCryptoData();
         $data =[
             'cryptoData'=> $cryptoData,
@@ -78,5 +66,4 @@ class Dashboard extends Controller
     $this->view('pages/dashboard', $data);
   }
   
->>>>>>> 659e9ba46788e273e1bb1f8c9d7678ab50f2e067
 }

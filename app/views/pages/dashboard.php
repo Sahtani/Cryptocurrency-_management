@@ -209,7 +209,7 @@
             </td>
           
             
-            <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">
+            <td id="<?= $coin['id']; ?>" class="coin-name whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">
             <?= $coin['name'] ?>
             </td>
             
@@ -217,8 +217,8 @@
             <?= number_format($coin['max_supply'], 2) ?>
             </td>
             
-            <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-            <?= number_format($coin['quote']['USD']['price'], 2) ?>
+            <td class="current-price whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+            <?= sprintf("%.2f", $coin['quote']['USD']['price']) ?>
             </td>
             
             <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
@@ -234,14 +234,13 @@
             </td>
             
             <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                <button data-modal-target="crud-modal" data-modal-toggle="crud-modal" class="block text-white bg-pink-600 hover:bg-pink-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center " type="button" name="submit">
-                    Buy
-                </button>
+            <button data-modal-target="crud-modal" onclick="clickBuyBtn(event)" data-modal-toggle="crud-modal" class="buy_btn block text-white bg-pink-600 hover:bg-pink-700  font-medium rounded-lg text-sm px-5 py-2.5 text-center " type="button" name="submit">
+                                        Buy
+                                      </button>
             </td>
         </tr>
     <?php endforeach; ?>
 
-                                    </td>
 
                                 </tr>
                             </tbody>
@@ -277,7 +276,7 @@
               <form class="p-4 md:p-5" action="<?php echo URLROOT; ?>/wallet/buy" method="post">
                 <div class="grid gap-4 mb-4 grid-cols-2">
                   <div class="col-span-2">
-                    <input type="hidden" name="id_crypto">
+                    <input type="hidden" name="id_crypto" id="id_crypto">
                     <label for="name" class="block mb-2 text-sm font-medium text-gray-800 ">Name</label>
                     <input type="text" name="name_crypto" id="name" class="bg-white border focus:outline-none border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-white dark:border-gray-500 dark:placeholder-gray-400 " placeholder="coin name" required="">
                   </div>
@@ -287,7 +286,7 @@
                   </div>
                   <div class="col-span-2 sm:col-span-1">
                     <label for="Quant" class="block mb-2 text-sm font-medium text-gray-800 ">Quantite</label>
-                    <input type="number" name="Quant" id="Quant" class="bg-white border focus:outline-none border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-2.5 dark:border-gray-500 dark:placeholder-gray-400  " placeholder="" required="">
+                    <input type="number" name="Quant" id="Quant" min="1" value="1" class="bg-white border focus:outline-none border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-2.5 dark:border-gray-500 dark:placeholder-gray-400  " placeholder="" required="">
 
                   </div>
 
@@ -308,18 +307,30 @@
         </div>
 
         <script>
-          const clickBuyBtn = (e) => {
+          function clickBuyBtn(e)  {
+            console.log("gggg");
             // console.log(parseFloat(e.target.parentElement.parentElement.querySelector(".current-price").innerText));
             const coinName = e.target.parentElement.parentElement.querySelector(".coin-name");
+            console.log(coinName);
             const currentPrice = e.target.parentElement.parentElement.querySelector(".current-price");
             const coinNameInput = document.querySelector("input#name");
             const coinPriceInput = document.querySelector("input#price");
             const coinIdInput = document.querySelector("input#id_crypto");
             coinNameInput.value = coinName.innerText
-            coinPriceInput.value = currentPrice.innerText
+            coinPriceInput.value = parseInt(currentPrice.innerText);
             coinIdInput.value = coinName.id;
           }
-        </script>
+        </script> 
 
+<script>
+  // fetch('https://pro-api.coinmarketcap.com/v1/cryptocurrency/ohlcv/latest?id=1', {
+  //   headers:{
+  //     "X-CMC_PRO_API_KEY":'a7be6e4e-642d-499e-bf16-00bf9db600ba'
+  //   }
+  // })
+	// .then(response => response.json())
+	// .then(data => console.log(data))
+	// .catch(err => console.error(err));
 
+</script>
         <?php require APPROOT . '/views/inc/footer.php'; ?>
