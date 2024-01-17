@@ -22,6 +22,8 @@ class Watchlists
             return 'INSERT INTO watchlist VALUES (null, :user_id, :cryptomonnaie_id)';
         }
     }
+
+    
     public function addFavorite($coinsid, $userid)
     {
         $result = $this->checkIfFavorite($coinsid, $userid);

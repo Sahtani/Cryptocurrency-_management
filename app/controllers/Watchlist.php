@@ -15,6 +15,7 @@ class Watchlist extends Controller
 
         $this->view('pages/watchlist');
     }
+    
 
     public function addfavorite($coinId, $userId)
     {
@@ -33,6 +34,16 @@ class Watchlist extends Controller
         }
         $this->view('pages/dashboard', $data);
     }
+
+
+    public function displayFavorite($coinId, $userId){
+
+        $this->Watchlist->addFavorite($coinId, $userId);
+        $cryptoData = $this->coins->fetchCryptoData();
+        $data = $this->Watchlist->getUserWatchlist($userId, $cryptoData);
+        $this->view('pages/watchlist', $data);
+    }
+
 
     public function displayCrypto()
     {
