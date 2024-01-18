@@ -278,11 +278,11 @@
                   <div class="col-span-2">
                     <input type="hidden" name="id_crypto" id="id_crypto">
                     <label for="name" class="block mb-2 text-sm font-medium text-gray-800 ">Name</label>
-                    <input type="text" name="name_crypto" id="name" class="bg-white border focus:outline-none border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-white dark:border-gray-500 dark:placeholder-gray-400 " placeholder="coin name" required="">
+                    <input type="text" name="name_crypto" id="name" class="bg-white border focus:outline-none border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-white dark:border-gray-500 dark:placeholder-gray-400 " placeholder="coin name" required="" readonly>
                   </div>
                   <div class="col-span-2 sm:col-span-1">
                     <label for="price" class="block mb-2 text-sm font-medium text-gray-800">Price</label>
-                    <input type="number" name="price" id="price" class="bg-white border focus:outline-none border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-2.5 dark:border-gray-500 dark:placeholder-gray-400   " placeholder="$2999" required="">
+                    <input type="number" name="price" id="price" class="bg-white border focus:outline-none border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-2.5 dark:border-gray-500 dark:placeholder-gray-400   " placeholder="$2999" required="" readonly>
                   </div>
                   <div class="col-span-2 sm:col-span-1">
                     <label for="Quant" class="block mb-2 text-sm font-medium text-gray-800 ">Quantite</label>
