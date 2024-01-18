@@ -28,21 +28,6 @@ class Pages extends Controller
     $this->view('pages/about', $data);
   }
 
-  public function dashboard()
-  {
-    if(!isLoggedIn()){
-      redirect('users/index');
-  }
-    // $this->model('User');
-    // $data = new User();
-    // $row = $data->displayCoin();
-    // $coins = $data->displaywatchlist();
-    // $data = array(
-    //   'row' => $row,
-    //   'coins'=> $coins,
-    // );
-    $this->view('pages/dashboard', $data);
-  }
 
   
   public function Watchlist()

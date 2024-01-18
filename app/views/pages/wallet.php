@@ -1,4 +1,5 @@
 <?php require APPROOT . '/views/inc/header.php';
+
 ?>
 
 <body class="bg-[#111827] text-black font-sans">
@@ -182,14 +183,6 @@
             <div class="flex flex-col min-w-0 flex-1 overflow-hidden bg-white">
 
                 <main>
-                    <div class="text-center my-4 ">
-                        <!-- <h1 class="text-2xl hidden " id="qtn">
-                            //<?php $data['totalQuantite'] ?>$
-                        </h1> -->
-                        <h1 class="text-2xl " id="pricehna">
-                            <?php echo $data['totalQuantite'] ?>$
-                        </h1>
-                    </div>
 
                     <div class="flex justify-around my-4">
                         <button class="bg-[#db2777] text-white rounded py-2 px-4">Nexus ID :
@@ -200,45 +193,27 @@
                             class="bg-[#db2777] text-white rounded py-2 px-4">Send</a>
                         <button class="bg-[#db2777] text-white rounded py-2 px-4">Stat</button>
                     </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 px-4">
-                        <div class="bg-gray-800 p-4 rounded flex items-center">
-                            <img src="solana-icon.png" alt="Solana" class="h-8 mr-2">
-                            <div>
-                                <p>Solana</p>
-                                <p class="text-sm text-gray-400">0 SOL</p>
+                    <?php foreach ($data['wallet'] as $wallet): ?>
+                        <div class="grid grid-cols-1 m-4 md:grid-cols-3 gap-4 px-4">
+                            <div class="bg-gray-800 p-4 rounded flex items-center">
+                                <div>
+                                    <?php foreach ($data['coin'] as $coin): ?>
+                                        <img src="https://s2.coinmarketcap.com/static/img/coins/64x64/<?= $wallet['CryptomonnaieID']; ?>.png"
+                                            alt="<?= $wallet['nom']; ?>" class="w-8 h-8">
+                                    <?php endforeach; ?>
+                                    <p class="text-white">
+                                        <?php echo $wallet['nom']; ?>
+                                    </p>
+                                    <p class="text-sm text-gray-400">
+                                        <?php echo $wallet['Quantite']; ?>
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                        <div class="bg-gray-800 p-4 rounded flex items-center">
-                            <img src="ethereum-icon.png" alt="Ethereum" class="h-8 mr-2">
-                            <div>
-                                <p>Ethereum</p>
-                                <p class="text-sm text-gray-400">0 ETH</p>
-                            </div>
-                        </div>
-                        <div class="bg-gray-800 p-4 rounded flex items-center">
-                            <img src="polygon-icon.png" alt="Polygon" class="h-8 mr-2">
-                            <div>
-                                <p>Polygon</p>
-                                <p class="text-sm text-gray-400">0 MATIC</p>
-                            </div>
-                        </div>
-                    </div>
+                    <?php endforeach; ?>
                 </main>
-
                 <?php require APPROOT . '/views/inc/footer.php'; ?>
 
 </body>
 
 </html>
-
-<script>
-    let qtn = parseInt(document.getElementById('qtn').innerText);
-    console.log(qtn);
-    // let price = parseInt(document.getElementById('price').innerText);
-
-    let price = 3;
-    let totalvalue = qtn * price;
-    // let pricehna =document.getElementById('pricehna');
-    pricehna.innerText = totalvalue; 
-</script>

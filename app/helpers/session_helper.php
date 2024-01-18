@@ -1,10 +1,11 @@
 <?php
-  session_start();
+session_start();
 
-  function isLoggedIn(){
-    if(isset($_SESSION['conn'])){
-      return true;
-    } else {
-      return false;
-    }
+function isLoggedIn()
+{
+  if (isset($_SESSION['conn']) && isset($_SESSION['user_id'])) {
+    return true;
+  } else {
+    return false;
   }
+}

@@ -6,35 +6,33 @@ class Wallet extends Controller
 
     public function __construct()
     {
-        $this->model = $this->model('Wallets');
 
+        $this->model = $this->model('Wallets');
     }
 
 
     public function index()
     {
-        $data = $this->model->getWallet();
-
+        $userId = 100002;
+        
+        // Get the user's wallet data
+        $walletData = $this->model->getWalletForUser($userId);
+    
+        // Fetch data for cryptocurrencies in the user's wallet
+        $cryptoData = $this->model->fetchCryptoData($walletData);
+    
+        $data = [
+            'wallet' => $walletData,
+            'User_ID' => $userId,
+            'coin' => $cryptoData // Rename 'coin' to 'cryptoData' for consistency
+        ];
+    
         $this->view('pages/wallet', $data);
     }
-
-    public function wallet()
-    {
-        $userId = 99999;
-        $data = $this->model->getWallet($userId);
-        $totalQuantite = 0;
-        foreach ($data as $entry) {
-            $totalQuantite += floatval($entry['Quantité']);
-        }
-
-        // Add the totalQuantite to the data array
-        $data['totalQuantite'] = $totalQuantite;
-        $data['User_ID'] = $userId;
+    
 
 
 
-        $this->view('pages/wallet', $data);
-    }
 
     public function send()
     {
@@ -46,4 +44,19 @@ class Wallet extends Controller
 
         $this->view('pages/send', $data);
     }
+
+
+    public function getAll()
+    {
+        $walletid = 0;
+        if (isset($_POST['User_ID'])) {
+            $walletid = $_POST['User_ID'];
+        }
+        $data = $this->model->getall($walletid);
+        if ($data) {
+            echo json_encode($data);
+        }
+    }
 }
+
+

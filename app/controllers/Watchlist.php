@@ -7,11 +7,11 @@ class Watchlist extends Controller
     public function __construct()
     {
         $this->Watchlist = $this->model('Watchlists');
-        $this->coins = $this->model('User');
+        $this->coins = $this->model('Coin');
 
     }
 
-    public function watchlist()
+    public function index()
     {
 
         $this->view('pages/watchlist');
@@ -20,7 +20,7 @@ class Watchlist extends Controller
     public function addfavorite($coinId)
     {
 
-        $userId = 99999;
+        $userId = 100002;
         $this->Watchlist->addFavorite($userId, $coinId);
         $data = $this->coins->displayCoin();
         $data = array(
@@ -31,7 +31,14 @@ class Watchlist extends Controller
 
     }
 
+    public function displayCrypto()
+    {
+        $userId = 100002;
+        $cryptoData = $this->coins->fetchCryptoData();
+        $data = $this->Watchlist->getUserWatchlist($userId, $cryptoData);
 
+        $this->view('pages/watchlist', $data);
+    }
 
 
 }
