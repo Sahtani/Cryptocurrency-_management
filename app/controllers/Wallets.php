@@ -32,9 +32,12 @@ class Wallets extends Controller
         $transactionResult = $this->Wallet->sendCoins($senderID, $recipientID, $amount, $cryptoID);
 
         if ($transactionResult) {
-            echo "<p>Transaction successful! Cryptocurrency sent.</p>";
+
+            // $data["message"]="Transaction successful! Cryptocurrency sent.";
+            $this->view('pages/wallet');
         } else {
-            echo "<p>Error: Insufficient balance or other issues.</p>";
+            // $data["message"]="Error: Insufficient balance or other issues";
+            $this->view('pages/wallet');
         }
 
         $this->view('pages/wallet');

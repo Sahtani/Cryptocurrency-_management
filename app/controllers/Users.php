@@ -66,7 +66,7 @@ class Users extends Controller{
                   $mail->SMTPSecure = 'ssl';           
                   $mail->Port       = 465;  
                   $mail->setFrom('khadija.ourraiss25@gmail.com');
-                  $mail->addAddress($data['email']);   
+                  $mail->addAddress($data['email']);   //user
                   $mail->isHTML(true); 
                   $mail->Subject = 'Verification code';
                   $mail->Body = $verificationCode;
