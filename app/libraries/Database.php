@@ -64,29 +64,26 @@
       return $this->stmt->execute();
     }
 
-    // Get the PDO statement
-    public function getStmt() {
-      return $this->stmt;
-  }
-
-  // Get result set as array of objects
-  public function resultSet() {
+    // Get result set as array of objects
+    public function resultSet(){
       $this->execute();
       return $this->stmt->fetchAll(PDO::FETCH_OBJ);
-  }
+    }
 
-  public function reusltExecut($sql){
-    $this->dbh->query($sql);
-  }
-
-  // Get single record as object
-  public function single() {
+    // Get single record as object
+    public function single(){
       $this->execute();
       return $this->stmt->fetch(PDO::FETCH_OBJ);
-  }
+    }
 
-  // Get row count
-  public function rowCount() {
+    // Get row count
+    public function rowCount(){
       return $this->stmt->rowCount();
-  }
+    }
+    public function query_data($sql, $data = [])
+    {
+        $this->stmt = $this->dbh->prepare($sql);
+        $this->stmt->execute($data);
+        return $this->stmt;
+    }
   }

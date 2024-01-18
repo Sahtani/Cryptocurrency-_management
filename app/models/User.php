@@ -48,9 +48,6 @@ class User
         $row = $this->db->single();
         $hashed_password = $row->MotDePasse;
         if (password_verify($password, $hashed_password)) {
-            // Store user ID in session
-            $_SESSION['userId'] = $row->ID;
-
             return $row;
         } else {
             return false;
@@ -69,4 +66,3 @@ class User
         }
     }
 }
-?>
