@@ -52,4 +52,6 @@ class Watchlist extends Controller
         $data = $this->Watchlist->getUserWatchlist($userId, $cryptoData);
         $this->view('pages/watchlist', $data);
     }
+
+    
 }

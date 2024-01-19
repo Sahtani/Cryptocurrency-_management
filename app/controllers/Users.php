@@ -1,4 +1,6 @@
 <?php
+
+
 class Users extends Controller{
 private $userModal;
     public function __construct(){

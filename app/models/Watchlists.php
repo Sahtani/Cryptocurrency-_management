@@ -62,4 +62,5 @@ class Watchlists
 
         return $watchlistData;
     }
+    
 }
